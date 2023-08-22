@@ -1,9 +1,8 @@
-# hunter_ws
-# AIV - Autonomous Intelligent Vehicle
+# hunter_ws from AIV
 
 ![IMG_5793](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba)
 
-Welcome to the official repository of AIV (Autonomous Intelligent Vehicle), the self-driving car club at Sejong University.
+Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.
 
 ## About Us
 
@@ -21,7 +20,7 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 - GPS
 - IMU
 - Ouster 64-channel LiDAR
-- Dual Cameras
+- Left, Right Camera
 
 ## Object Detection with YOLOv5
 
@@ -29,21 +28,11 @@ We have trained the YOLOv5 model to detect yellow and blue cones. This allows us
 
 ## Getting Started
 
-To get started with our project, follow these steps:
+To begin with our project, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/your-username/your-repo.git`
-2. Install the necessary dependencies: [link_to_installation_guide](installation_guide.md)
-3. Launch the simulation environment: `roslaunch your_package_name simulation.launch`
-4. Explore and contribute to our exciting journey into autonomous driving!
+### 1. Install ROS Dependencies
 
-## Contact Us
-
-If you're interested in our work or have any questions, feel free to reach out to us:
-
-- Follow us on social media: [Instagram](https://instagram.com/aiv_sejong?igshid=OGQ5ZDc2ODk2ZA==)
-
-We look forward to collaborating with you on this incredible adventure towards autonomous driving excellence!
-
+Execute the following commands to install ROS dependencies:
 
 ```bash
 sudo apt-get install ros-noetic-ros-control -y
@@ -57,6 +46,9 @@ sudo apt install ros-noetic-ackermann-steering-controller -y
 sudo apt install ros-noetic-cob-perception-msgs -y
 pip install --upgrade python-dateutil
 ```
+### 2. Install Hunter2 Model
+
+Create the hunter_ws directory and install the Hunter2 model using the following commands:
 
 ```bash
 mkdir hunter_ws
@@ -66,6 +58,9 @@ cd src
 
 git clone https://github.com/Ethan-KoSeungHyun/hunter2.git
 ```
+### 3. Set Up Dependencies and Build
+Install necessary dependencies and build the project using the following commands:
+
 ```bash
 cd ~/hunter_ws
 source /opt/ros/noetic/setup.bash
@@ -74,6 +69,19 @@ chmod +x ./src/yolov5_ros/src/detect.py
 rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
+
+## Contact Us
+
+If you're interested in our work or have any questions, feel free to reach out to us:
+
+- Follow us on social media: [Instagram](https://instagram.com/aiv_sejong?igshid=OGQ5ZDc2ODk2ZA==)
+
+We look forward to collaborating with you on this incredible adventure towards autonomous driving excellence!
+
+
+
+
+
 
 
 ```bash
