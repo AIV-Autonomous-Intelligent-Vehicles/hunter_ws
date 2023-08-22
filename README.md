@@ -1,17 +1,19 @@
 # hunter_ws from AIV
 
 ![IMG_5793](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba)
-
 Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.
+
 
 ## About Us
 
 We are a passionate group of students from Sejong University dedicated to the field of autonomous driving. Our mission is to explore, learn, and innovate within the realm of self-driving technology.
 
+
 ## Development Environment
 
 - Operating System: Ubuntu 20.04
 - ROS Version: ROS 1 Noetic
+
 
 ## Simulation Environment
 
@@ -22,9 +24,11 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 - Ouster 64-channel LiDAR
 - Left, Right Camera
 
+
 ## Object Detection with YOLOv5
 
 We have trained the YOLOv5 model to detect yellow and blue cones. This allows us to publish bounding box information as a topic, providing valuable insights into the surrounding environment.
+
 
 ## Getting Started
 
@@ -70,6 +74,19 @@ rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
 
+### 4. Run Gazebo Simulation
+
+```bash
+# Rviz
+cd hunter_ws
+source devel/setup.bash
+
+roslaunch hunter2_base display_xacro.launch
+```
+
+![Screenshot from 2023-08-22 22-01-09](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0b82c9bb-e685-4be6-be17-4f54bb118dfc)
+
+
 ## Contact Us
 
 If you're interested in our work or have any questions, feel free to reach out to us:
@@ -83,36 +100,5 @@ We look forward to collaborating with you on this incredible adventure towards a
 
 
 
-
-```bash
-# Rviz
-cd hunter_ws
-source devel/setup.bash
-
-roslaunch hunter2_base display_xacro.launch
-```
-
-![Screenshot from 2023-08-22 22-01-09](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0b82c9bb-e685-4be6-be17-4f54bb118dfc)
-
-
-
-```bash
-# Rviz
-cd hunter_ws
-source devel/setup.bash
-
-roslaunch hunter2_base display_xacro.launch
-```
-![RVIZ](https://github.com/Ethan-KoSeungHyun/hunter2/assets/113443261/161d68b4-372e-4986-8326-bd5203a5c996)
-
-
-```bash
-# Gazebo
-cd hunter_ws
-source devel/setup.bash
-
-roslaunch hunter2_gazebo hunter2_empty_world.launch
-```
-![GAZEBO](https://github.com/Ethan-KoSeungHyun/hunter2/assets/113443261/90bfab3a-ab56-48b4-b3bd-abe4cb11cb60)
 
 
