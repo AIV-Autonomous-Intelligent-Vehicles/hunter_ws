@@ -55,12 +55,7 @@ pip install --upgrade python-dateutil
 Create the hunter_ws directory and install the Hunter2 model using the following commands:
 
 ```bash
-mkdir hunter_ws
-cd hunter_ws
-mkdir src
-cd src
-
-git clone https://github.com/Ethan-KoSeungHyun/hunter2.git
+git clone https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws.git
 ```
 ### 3. Set Up Dependencies and Build
 Install necessary dependencies and build the project using the following commands:
