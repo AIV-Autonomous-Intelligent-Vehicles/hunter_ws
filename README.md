@@ -81,7 +81,7 @@ catkin_make
 cd hunter_ws
 source devel/setup.bash
 
-roslaunch hunter2_base display_xacro.launch
+roslaunch hunter2_gazebo hunter2_main.launch
 ```
 
 ![Screenshot from 2023-08-22 22-01-09](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0b82c9bb-e685-4be6-be17-4f54bb118dfc)
@@ -94,11 +94,6 @@ If you're interested in our work or have any questions, feel free to reach out t
 - Follow us on social media: [Instagram](https://instagram.com/aiv_sejong?igshid=OGQ5ZDc2ODk2ZA==)
 
 We look forward to collaborating with you on this incredible adventure towards autonomous driving excellence!
-
-
-
-
-
 
 
 
