@@ -15,6 +15,7 @@ We are a passionate group of students from Sejong University dedicated to the fi
 
 - Operating System: Ubuntu 20.04
 - ROS Version: ROS 1 Noetic
+- Matlab: 2023a
 
 
 ## Simulation Environment
