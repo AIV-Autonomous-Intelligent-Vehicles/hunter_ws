@@ -1,0 +1,2 @@
+ouster-gazebo-simulation/ouster_gazebo_plugins:ouster-gazebo-simulation/ouster_os1_64:ugv_sim/hunter/hunter2_base:ugv_sim/hunter/hunter2_control:ugv_sim/hunter/hunter2_gazebo:ugv_sim/hunter/steer_bot_hardware_gazebo:ugv_sim/hunter/steer_drive_controller:yolov5_ros
+-DCATKIN_DEVEL_PREFIX=/home/aiv/hunter_ws/devel -DCMAKE_INSTALL_PREFIX=/home/aiv/hunter_ws/install -G Unix Makefiles

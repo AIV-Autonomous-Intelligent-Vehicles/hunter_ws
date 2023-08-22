@@ -1,0 +1,8 @@
+prefix=/home/aiv/hunter_ws/devel
+
+Name: hunter2_base
+Description: Description of hunter2_base
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

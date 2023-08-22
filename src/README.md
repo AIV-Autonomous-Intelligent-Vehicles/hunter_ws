@@ -14,6 +14,8 @@ sudo apt-get install ros-noetic-joint-state-publisher-gui -y
 sudo apt-get install ros-noetic-rqt-robot-steering -y
 sudo apt-get install ros-noetic-hector-gazebo-plugins -y
 sudo apt install ros-noetic-ackermann-steering-controller -y
+sudo apt install ros-noetic-cob-perception-msgs -y
+pip install --upgrade python-dateutil
 ```
 
 ```bash
@@ -27,6 +29,8 @@ git clone https://github.com/Ethan-KoSeungHyun/hunter2.git
 ```bash
 cd ~/hunter_ws
 source /opt/ros/noetic/setup.bash
+pip install -r ./src/yolov5_ros/src/yolov5/requirements.txt
+chmod +x ./src/yolov5_ros/src/detect.py
 rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```

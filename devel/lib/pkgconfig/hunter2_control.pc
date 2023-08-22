@@ -1,0 +1,8 @@
+prefix=/home/aiv/hunter_ws/devel
+
+Name: hunter2_control
+Description: Description of hunter2_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
