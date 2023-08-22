@@ -30,6 +30,8 @@ chmod +x ./src/yolov5_ros/src/detect.py
 rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
+
+
 ```bash
 # Rviz
 cd hunter_ws
@@ -37,7 +39,8 @@ source devel/setup.bash
 
 roslaunch hunter2_base display_xacro.launch
 ```
-![Uploading Screenshot from 2023-08-22 22-01-09.png…]()
+
+![Screenshot from 2023-08-22 22-01-09](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0b82c9bb-e685-4be6-be17-4f54bb118dfc)
 
 
 
