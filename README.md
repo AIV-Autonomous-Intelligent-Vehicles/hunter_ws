@@ -30,6 +30,16 @@ chmod +x ./src/yolov5_ros/src/detect.py
 rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
+```bash
+# Rviz
+cd hunter_ws
+source devel/setup.bash
+
+roslaunch hunter2_base display_xacro.launch
+```
+![Uploading Screenshot from 2023-08-22 22-01-09.png…]()
+
+
 
 ```bash
 # Rviz
@@ -50,11 +60,4 @@ roslaunch hunter2_gazebo hunter2_empty_world.launch
 ```
 ![GAZEBO](https://github.com/Ethan-KoSeungHyun/hunter2/assets/113443261/90bfab3a-ab56-48b4-b3bd-abe4cb11cb60)
 
-```bash
-# Final
-cd hunter_ws
-source devel/setup.bash
 
-roslaunch hunter2_gazebo hunter2_OS.launch
-```
-![Screenshot from 2023-07-09 21-00-57](https://github.com/Ethan-KoSeungHyun/hunter2/assets/113443261/73dbdeb3-6742-4689-96d3-0ef1e65d2981)
