@@ -1,4 +1,48 @@
 # hunter_ws
+# AIV - Autonomous Intelligent Vehicle
+
+![IMG_5793](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba)
+
+Welcome to the official repository of AIV (Autonomous Intelligent Vehicle), the self-driving car club at Sejong University.
+
+## About Us
+
+We are a passionate group of students from Sejong University dedicated to the field of autonomous driving. Our mission is to explore, learn, and innovate within the realm of self-driving technology.
+
+## Development Environment
+
+- Operating System: Ubuntu 20.04
+- ROS Version: ROS 1 Noetic
+
+## Simulation Environment
+
+We have utilized the **hunter2** model provided by [agilexrobotics](https://github.com/agilexrobotics/ugv_gazebo_sim) as the foundation for our simulation environment. To enhance its capabilities, we have integrated the following sensors:
+
+- GPS
+- IMU
+- Ouster 64-channel LiDAR
+- Dual Cameras
+
+## Object Detection with YOLOv5
+
+We have trained the YOLOv5 model to detect yellow and blue cones. This allows us to publish bounding box information as a topic, providing valuable insights into the surrounding environment.
+
+## Getting Started
+
+To get started with our project, follow these steps:
+
+1. Clone this repository: `git clone https://github.com/your-username/your-repo.git`
+2. Install the necessary dependencies: [link_to_installation_guide](installation_guide.md)
+3. Launch the simulation environment: `roslaunch your_package_name simulation.launch`
+4. Explore and contribute to our exciting journey into autonomous driving!
+
+## Contact Us
+
+If you're interested in our work or have any questions, feel free to reach out to us:
+
+- Follow us on social media: [Instagram](https://instagram.com/aiv_sejong?igshid=OGQ5ZDc2ODk2ZA==)
+
+We look forward to collaborating with you on this incredible adventure towards autonomous driving excellence!
 
 
 ```bash
