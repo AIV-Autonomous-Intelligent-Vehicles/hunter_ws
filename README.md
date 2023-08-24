@@ -1,8 +1,7 @@
-![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)# hunter_ws from AIV
+# hunter_ws from AIV
 
 ![IMG_5793](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba)
-![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/202b7e84-7227-471e-94c6-7cd58099185e)
-
+![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)
 
 Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.
 
