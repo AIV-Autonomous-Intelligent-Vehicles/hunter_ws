@@ -14,7 +14,7 @@ pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat',
 
 
 horizontalResolution = 512;
-roi = [0, 7, -10, 10, -2, 5];
+roi = [0, 7, -3, 3, -2, 5];
 params = lidarParameters('OS1Gen1-64',horizontalResolution);
 
 pp = initialize_pure_pursuit_controller();
@@ -42,7 +42,7 @@ while true
     tic;
     vehiclePoseInOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
     
-    if isempty(pp.Waypoints) || norm(odomWaypoints(end,1) - vehiclePoseInOdom(1),odomWaypoints(end,2) - vehiclePoseInOdom(2)) < 2.3  % Considering only x and y for the distance
+    if isempty(pp.Waypoints) || norm(odomWaypoints(end,:)-[vehiclePoseInOdom(1), vehiclePoseInOdom(2)]) < 2.3  % Considering only x and y for the distance
         disp("Make new waypoints");
         
         try
@@ -66,9 +66,9 @@ while true
             innerConePosition = unique_rows(innerConePosition);
             outerConePosition = unique_rows(outerConePosition);
             hold off;
-            scatter(innerConePosition(:,1),innerConePosition(:,2),'red');
+            scatter(innerConePosition(:,1),innerConePosition(:,2),'blue');
             hold on;
-            scatter(outerConePosition(:,1),outerConePosition(:,2),'blue');
+            scatter(outerConePosition(:,1),outerConePosition(:,2),'red');
 
             [innerConePosition, outerConePosition] = match_array_lengths(innerConePosition, outerConePosition);
             waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
@@ -198,7 +198,8 @@ end
 function pp = initialize_pure_pursuit_controller()
     pp=controllerPurePursuit;
     pp.LookaheadDistance=2.0;
-    pp.DesiredLinearVelocity=1.0;
+    pp.DesiredLinearVelocity=2.0;
+    pp.MaxAngularVelocity = 3.0;
 end
 
 function roiPtCloud = preprocess_lidar_data(lidarData, params, roi)
@@ -315,24 +316,24 @@ function waypoints = generate_waypoints_del(innerConePosition, outerConePosition
     xmp=((xPo((Eodd(:,1))) + xPo((Eodd(:,2))))/2);
     ymp=((yPo((Eodd(:,1))) + yPo((Eodd(:,2))))/2);
     Pmp=[xmp ymp];
-	waypoints = Pmp;
+
 
 		    %step 4 : waypoint 보간
-    %distancematrix = squareform(pdist(Pmp));
-    %distancesteps = zeros(length(Pmp)-1,1);
-    %for j = 2:length(Pmp)
-    %    distancesteps(j-1,1) = distancematrix(j,j-1);
-    %end
-    %totalDistance = sum(distancesteps); % total distance travelled
-    %distbp = cumsum([0; distancesteps]); % distance for each waypoint
-    %gradbp = linspace(0,totalDistance,100);
-    %xq = interp1(distbp,xmp,gradbp,'spline'); % interpolate x coordinates
-    %yq = interp1(distbp,ymp,gradbp,'spline'); % interpolate y coordinates
-    %xp = [xp xq]; % store obtained x midpoints after each iteration
-    %yp = [yp yq]; % store obtained y midpoints after each iteration
+    distancematrix = squareform(pdist(Pmp));
+    distancesteps = zeros(length(Pmp)-1,1);
+    for j = 2:length(Pmp)
+        distancesteps(j-1,1) = distancematrix(j,j-1);
+    end
+    totalDistance = sum(distancesteps); % total distance travelled
+    distbp = cumsum([0; distancesteps]); % distance for each waypoint
+    gradbp = linspace(0,totalDistance,100);
+    xq = interp1(distbp,xmp,gradbp,'spline'); % interpolate x coordinates
+    yq = interp1(distbp,ymp,gradbp,'spline'); % interpolate y coordinates
+    xp = [xp xq]; % store obtained x midpoints after each iteration
+    yp = [yp yq]; % store obtained y midpoints after each iteration
     
 		    %step 5 : 최종 waypoint 생성
-    %waypoints=[xp', yp'];
+    waypoints=[xp', yp'];
 end
 
 function waypoints = generate_waypoints(innerConePosition, outerConePosition)
