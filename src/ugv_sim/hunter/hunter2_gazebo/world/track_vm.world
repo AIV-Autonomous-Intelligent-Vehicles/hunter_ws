@@ -2720,7 +2720,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -2736,7 +2736,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -2813,7 +2813,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -2829,7 +2829,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -2906,7 +2906,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -2922,7 +2922,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -2999,7 +2999,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3015,7 +3015,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3092,7 +3092,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3108,7 +3108,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3185,7 +3185,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3201,7 +3201,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3278,7 +3278,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3294,7 +3294,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3371,7 +3371,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3387,7 +3387,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3464,7 +3464,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3480,7 +3480,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3557,7 +3557,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3573,7 +3573,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3650,7 +3650,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3666,7 +3666,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3743,7 +3743,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3759,7 +3759,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3836,7 +3836,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3852,7 +3852,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -3929,7 +3929,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -3945,7 +3945,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4022,7 +4022,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4038,7 +4038,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4115,7 +4115,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4131,7 +4131,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4208,7 +4208,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4224,7 +4224,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4301,7 +4301,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4317,7 +4317,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4394,7 +4394,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4410,7 +4410,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4487,7 +4487,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4503,7 +4503,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4580,7 +4580,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4596,7 +4596,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4673,7 +4673,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4689,7 +4689,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4766,7 +4766,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4782,7 +4782,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4859,7 +4859,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4875,7 +4875,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -4952,7 +4952,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -4968,7 +4968,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5045,7 +5045,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5061,7 +5061,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5138,7 +5138,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5154,7 +5154,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5231,7 +5231,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5247,7 +5247,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5324,7 +5324,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5340,7 +5340,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5417,7 +5417,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5433,7 +5433,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5510,7 +5510,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5526,7 +5526,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5603,7 +5603,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5619,7 +5619,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5696,7 +5696,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5712,7 +5712,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5789,7 +5789,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5805,7 +5805,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5882,7 +5882,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5898,7 +5898,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -5975,7 +5975,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -5991,7 +5991,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6068,7 +6068,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6084,7 +6084,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6161,7 +6161,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6177,7 +6177,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6254,7 +6254,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6270,7 +6270,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6347,7 +6347,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6363,7 +6363,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6440,7 +6440,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6456,7 +6456,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6533,7 +6533,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6549,7 +6549,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6626,7 +6626,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6642,7 +6642,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6719,7 +6719,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6735,7 +6735,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6812,7 +6812,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6828,7 +6828,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6905,7 +6905,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -6921,7 +6921,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -6998,7 +6998,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7014,7 +7014,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7091,7 +7091,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7107,7 +7107,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7184,7 +7184,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7200,7 +7200,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7277,7 +7277,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7293,7 +7293,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7370,7 +7370,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7386,7 +7386,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7463,7 +7463,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7479,7 +7479,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7556,7 +7556,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7572,7 +7572,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7649,7 +7649,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7665,7 +7665,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7742,7 +7742,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7758,7 +7758,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7835,7 +7835,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7851,7 +7851,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -7928,7 +7928,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -7944,7 +7944,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8021,7 +8021,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8037,7 +8037,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8114,7 +8114,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8130,7 +8130,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8207,7 +8207,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8223,7 +8223,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8300,7 +8300,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8316,7 +8316,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8393,7 +8393,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8409,7 +8409,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8486,7 +8486,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8502,7 +8502,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8579,7 +8579,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8595,7 +8595,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8672,7 +8672,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8688,7 +8688,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8765,7 +8765,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8781,7 +8781,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8858,7 +8858,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8874,7 +8874,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -8951,7 +8951,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -8967,7 +8967,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9044,7 +9044,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9060,7 +9060,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9137,7 +9137,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9153,7 +9153,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9230,7 +9230,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9246,7 +9246,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9323,7 +9323,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9339,7 +9339,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9416,7 +9416,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9432,7 +9432,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9509,7 +9509,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9525,7 +9525,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9602,7 +9602,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9618,7 +9618,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9695,7 +9695,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9711,7 +9711,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9788,7 +9788,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9804,7 +9804,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9881,7 +9881,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9897,7 +9897,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -9974,7 +9974,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -9990,7 +9990,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10067,7 +10067,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10083,7 +10083,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10160,7 +10160,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10176,7 +10176,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10253,7 +10253,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10269,7 +10269,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10346,7 +10346,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10362,7 +10362,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10439,7 +10439,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10455,7 +10455,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10532,7 +10532,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10548,7 +10548,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10625,7 +10625,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10641,7 +10641,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10718,7 +10718,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10734,7 +10734,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10811,7 +10811,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10827,7 +10827,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10904,7 +10904,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -10920,7 +10920,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -10997,7 +10997,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11013,7 +11013,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11090,7 +11090,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11106,7 +11106,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11183,7 +11183,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11199,7 +11199,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11276,7 +11276,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11292,7 +11292,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11369,7 +11369,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11385,7 +11385,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11462,7 +11462,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11478,7 +11478,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11555,7 +11555,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11571,7 +11571,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11648,7 +11648,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11664,7 +11664,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11741,7 +11741,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11757,7 +11757,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11834,7 +11834,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11850,7 +11850,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -11927,7 +11927,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -11943,7 +11943,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12020,7 +12020,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12036,7 +12036,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12113,7 +12113,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12129,7 +12129,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12206,7 +12206,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12222,7 +12222,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12299,7 +12299,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12315,7 +12315,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12392,7 +12392,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12408,7 +12408,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12485,7 +12485,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12501,7 +12501,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12578,7 +12578,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12594,7 +12594,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12671,7 +12671,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12687,7 +12687,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12764,7 +12764,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12780,7 +12780,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12857,7 +12857,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12873,7 +12873,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -12950,7 +12950,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -12966,7 +12966,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13043,7 +13043,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13059,7 +13059,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13136,7 +13136,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13152,7 +13152,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13229,7 +13229,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13245,7 +13245,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13322,7 +13322,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13338,7 +13338,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13415,7 +13415,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13431,7 +13431,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13508,7 +13508,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13524,7 +13524,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13601,7 +13601,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13617,7 +13617,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13694,7 +13694,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13710,7 +13710,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13787,7 +13787,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13803,7 +13803,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13880,7 +13880,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13896,7 +13896,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -13973,7 +13973,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13989,7 +13989,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14066,7 +14066,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14082,7 +14082,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14159,7 +14159,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14175,7 +14175,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14252,7 +14252,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14268,7 +14268,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14345,7 +14345,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14361,7 +14361,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14438,7 +14438,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14454,7 +14454,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14531,7 +14531,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14547,7 +14547,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14624,7 +14624,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14640,7 +14640,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14717,7 +14717,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14733,7 +14733,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14810,7 +14810,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14826,7 +14826,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14903,7 +14903,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14919,7 +14919,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -14996,7 +14996,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15012,7 +15012,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15089,7 +15089,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15105,7 +15105,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15182,7 +15182,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15198,7 +15198,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15275,7 +15275,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15291,7 +15291,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15368,7 +15368,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15384,7 +15384,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15461,7 +15461,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15477,7 +15477,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15554,7 +15554,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15570,7 +15570,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15647,7 +15647,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15663,7 +15663,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15740,7 +15740,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15756,7 +15756,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15833,7 +15833,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15849,7 +15849,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -15926,7 +15926,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -15942,7 +15942,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16019,7 +16019,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16035,7 +16035,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16112,7 +16112,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16128,7 +16128,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16205,7 +16205,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16221,7 +16221,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16298,7 +16298,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16314,7 +16314,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16391,7 +16391,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16407,7 +16407,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16484,7 +16484,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16500,7 +16500,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16577,7 +16577,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16593,7 +16593,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16670,7 +16670,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16686,7 +16686,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16763,7 +16763,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16779,7 +16779,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16856,7 +16856,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16872,7 +16872,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -16949,7 +16949,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -16965,7 +16965,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17042,7 +17042,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17058,7 +17058,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17135,7 +17135,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17151,7 +17151,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17228,7 +17228,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17244,7 +17244,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17321,7 +17321,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17337,7 +17337,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17414,7 +17414,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17430,7 +17430,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17507,7 +17507,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17523,7 +17523,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17600,7 +17600,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17616,7 +17616,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17693,7 +17693,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17709,7 +17709,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17786,7 +17786,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17802,7 +17802,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17879,7 +17879,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17895,7 +17895,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -17972,7 +17972,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -17988,7 +17988,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18065,7 +18065,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18081,7 +18081,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18158,7 +18158,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18174,7 +18174,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18251,7 +18251,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18267,7 +18267,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18344,7 +18344,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18360,7 +18360,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18437,7 +18437,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18453,7 +18453,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18530,7 +18530,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18546,7 +18546,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18623,7 +18623,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18639,7 +18639,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18716,7 +18716,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18732,7 +18732,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18809,7 +18809,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18825,7 +18825,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18902,7 +18902,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -18918,7 +18918,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -18995,7 +18995,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19011,7 +19011,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19088,7 +19088,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19104,7 +19104,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19181,7 +19181,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19197,7 +19197,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19274,7 +19274,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19290,7 +19290,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19367,7 +19367,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19383,7 +19383,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19460,7 +19460,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19476,7 +19476,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19553,7 +19553,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19569,7 +19569,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19646,7 +19646,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19662,7 +19662,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19739,7 +19739,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19755,7 +19755,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19832,7 +19832,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19848,7 +19848,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -19925,7 +19925,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -19941,7 +19941,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20018,7 +20018,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20034,7 +20034,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20111,7 +20111,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20127,7 +20127,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20204,7 +20204,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20220,7 +20220,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20297,7 +20297,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20313,7 +20313,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20390,7 +20390,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20406,7 +20406,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20483,7 +20483,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20499,7 +20499,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20576,7 +20576,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20592,7 +20592,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20669,7 +20669,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20685,7 +20685,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20762,7 +20762,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20778,7 +20778,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20855,7 +20855,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20871,7 +20871,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -20948,7 +20948,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -20964,7 +20964,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21041,7 +21041,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21057,7 +21057,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21134,7 +21134,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21150,7 +21150,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21227,7 +21227,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21243,7 +21243,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21320,7 +21320,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21336,7 +21336,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21413,7 +21413,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21429,7 +21429,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21506,7 +21506,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21522,7 +21522,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21599,7 +21599,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21615,7 +21615,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21692,7 +21692,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21708,7 +21708,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21785,7 +21785,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21801,7 +21801,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21878,7 +21878,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21894,7 +21894,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -21971,7 +21971,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -21987,7 +21987,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22064,7 +22064,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22080,7 +22080,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22157,7 +22157,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22173,7 +22173,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22250,7 +22250,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22266,7 +22266,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22343,7 +22343,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22359,7 +22359,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22436,7 +22436,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22452,7 +22452,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22529,7 +22529,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22545,7 +22545,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22622,7 +22622,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22638,7 +22638,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22715,7 +22715,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22731,7 +22731,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22808,7 +22808,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22824,7 +22824,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22901,7 +22901,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -22917,7 +22917,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -22994,7 +22994,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23010,7 +23010,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23087,7 +23087,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23103,7 +23103,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23180,7 +23180,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23196,7 +23196,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23273,7 +23273,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23289,7 +23289,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23366,7 +23366,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23382,7 +23382,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23459,7 +23459,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23475,7 +23475,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23552,7 +23552,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23568,7 +23568,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23645,7 +23645,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23661,7 +23661,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23738,7 +23738,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23754,7 +23754,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23831,7 +23831,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23847,7 +23847,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -23924,7 +23924,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -23940,7 +23940,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24017,7 +24017,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24033,7 +24033,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24110,7 +24110,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24126,7 +24126,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24203,7 +24203,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24219,7 +24219,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24296,7 +24296,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24312,7 +24312,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24389,7 +24389,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24405,7 +24405,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24482,7 +24482,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24498,7 +24498,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24575,7 +24575,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24591,7 +24591,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24668,7 +24668,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24684,7 +24684,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24761,7 +24761,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24777,7 +24777,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24854,7 +24854,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24870,7 +24870,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -24947,7 +24947,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -24963,7 +24963,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25040,7 +25040,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25056,7 +25056,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25133,7 +25133,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25149,7 +25149,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25226,7 +25226,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25242,7 +25242,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25319,7 +25319,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25335,7 +25335,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25412,7 +25412,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25428,7 +25428,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25505,7 +25505,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25521,7 +25521,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25598,7 +25598,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25614,7 +25614,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25691,7 +25691,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25707,7 +25707,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25784,7 +25784,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25800,7 +25800,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25877,7 +25877,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25893,7 +25893,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -25970,7 +25970,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -25986,7 +25986,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26063,7 +26063,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26079,7 +26079,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26156,7 +26156,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26172,7 +26172,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26249,7 +26249,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26265,7 +26265,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26342,7 +26342,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26358,7 +26358,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26435,7 +26435,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26451,7 +26451,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26528,7 +26528,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26544,7 +26544,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26621,7 +26621,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26637,7 +26637,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26714,7 +26714,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26730,7 +26730,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26863,7 +26863,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26879,7 +26879,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -26956,7 +26956,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -26972,7 +26972,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -27049,7 +27049,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -27065,7 +27065,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -27142,7 +27142,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -27158,7 +27158,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_y.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_y.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
@@ -27235,7 +27235,7 @@
           <geometry>
             <mesh>
               <scale>4.9 4.9 4.5</scale>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -27251,7 +27251,7 @@
           <pose>0 0 0.1 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://construction_cone/meshes/construction_cone_b.dae</uri>
+              <uri>./construction_cone/meshes/construction_cone_b.dae</uri>
               <scale>4.9 4.9 4.5</scale>
             </mesh>
           </geometry>
