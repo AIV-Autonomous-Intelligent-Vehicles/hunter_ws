@@ -1,5 +1,4 @@
 # hunter_ws from AIV
-
 ![IMG_5793](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba)
 ![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)
 [Matlab Example]
@@ -16,6 +15,7 @@ We are a passionate group of students from Sejong University dedicated to the fi
 
 - Operating System: Ubuntu 20.04
 - ROS Version: ROS 1 Noetic
+- Matlab: 2023a
 
 
 ## Simulation Environment
@@ -57,6 +57,7 @@ pip install --upgrade python-dateutil
 Create the hunter_ws directory and install the Hunter2 model using the following commands:
 
 ```bash
+cd ~/
 git clone https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws.git
 ```
 ### 3. Set Up Dependencies and Build
