@@ -50,6 +50,7 @@ sudo apt-get install ros-noetic-rqt-robot-steering -y
 sudo apt-get install ros-noetic-hector-gazebo-plugins -y
 sudo apt install ros-noetic-ackermann-steering-controller -y
 sudo apt install ros-noetic-cob-perception-msgs -y
+sudo apt install ros-noetic-mavros-msgs -y
 pip install --upgrade python-dateutil
 ```
 ### 2. Install Hunter2 Model
