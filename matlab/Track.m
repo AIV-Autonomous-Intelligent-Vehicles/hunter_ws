@@ -2,33 +2,34 @@ clear; close all; clc;
 rosshutdown;
 rosinit('http://localhost:11311')
 tftree = rostf;
-pause(2);
+pause(3);
+
+% Parameter//============================================================
+roi = [0, 10, -10, 10, -1, 2];
+
+clusterThreshold = 0.3;
+cuboidTreshold = 0.0030; %default 0.0215
+waypointTreshold = 3;
+
+
+pp=controllerPurePursuit;
+pp.LookaheadDistance=1.5;
+pp.DesiredLinearVelocity=1.5;
+pp.MaxAngularVelocity = 2.0;
+
+% init//==================================================================
+waypoints = [];
+markerIdPath = 0;
+markerIdClusters = 0;
+params = lidarParameters('OS1Gen1-64',512);
+
 lidarSub = rossubscriber('/lidar/points', "DataFormat", "struct");
-% 카메라 구독 및 초기화
 detect_sub_l = rossubscriber('yolov5/cob_detections_l', 'cob_perception_msgs/DetectionArray');
 detect_sub_r = rossubscriber('yolov5/cob_detections_r', 'cob_perception_msgs/DetectionArray');
-
-
 [pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
 pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
 
-
-horizontalResolution = 512;
-roi = [0, 7, -3, 3, -2, 5];
-params = lidarParameters('OS1Gen1-64',horizontalResolution);
-
-pp = initialize_pure_pursuit_controller();
-
-waypoints = [];
-totalWaypoints =[];
-totalClusters = [];
-
-markerIdPath = 0;
-markerIdClusters = 0;
-
-% 주어진 tform
 load("camera1.mat");
-% 카메라에서 LiDAR로의 역변환 계산
 camera1_tform = tform;
 tformCamera1 = invert(camera1_tform);
 load("camera2.mat");
@@ -36,13 +37,13 @@ camera2_tform = tform;
 tformCamera2 = invert(camera2_tform);
 load("cameraParams.mat")
 
-
+figure;
 
 while true
     tic;
     vehiclePoseInOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
     
-    if isempty(pp.Waypoints) || norm(odomWaypoints(end,:)-[vehiclePoseInOdom(1), vehiclePoseInOdom(2)]) < 2.3  % Considering only x and y for the distance
+    if isempty(pp.Waypoints) || norm(odomWaypoints(end,:)-[vehiclePoseInOdom(1), vehiclePoseInOdom(2)]) < waypointTreshold  % Considering only x and y for the distance
         disp("Make new waypoints");
         
         try
@@ -55,16 +56,18 @@ while true
             [y_coneBboxs_l, b_coneBboxs_l] = extractConesBboxs(bboxData_l);
             [y_coneBboxs_r, b_coneBboxs_r] = extractConesBboxs(bboxData_r);
             
-            [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams,tformCamera2,'ClusterThreshold',0.3);
-            [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams,tformCamera1,'ClusterThreshold',0.3);
+            [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams,tformCamera2,'ClusterThreshold',clusterThreshold);
+            [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams,tformCamera1,'ClusterThreshold',clusterThreshold);
+
             [y_coneBboxesLidar_l, b_coneBboxesLidar_l] = splitConesBboxes(y_coneBboxs_l,bboxesLidar_l,boxesUsed_l);
             [y_coneBboxesLidar_r, b_coneBboxesLidar_r] = splitConesBboxes(y_coneBboxs_r,bboxesLidar_r,boxesUsed_r);
-
-            innerConePosition = [b_coneBboxesLidar_l(:, 1:2);b_coneBboxesLidar_r(:, 1:2)];
-            outerConePosition = [y_coneBboxesLidar_l(:, 1:2);y_coneBboxesLidar_r(:, 1:2)];
+            
+            innerConePosition = extractConePositions(cuboidTreshold, b_coneBboxesLidar_l, b_coneBboxesLidar_r);
+            outerConePosition = extractConePositions(cuboidTreshold, y_coneBboxesLidar_l, y_coneBboxesLidar_r);
 
             innerConePosition = unique_rows(innerConePosition);
             outerConePosition = unique_rows(outerConePosition);
+
             hold off;
             scatter(innerConePosition(:,1),innerConePosition(:,2),'blue');
             hold on;
@@ -84,6 +87,16 @@ while true
             pp.Waypoints = odomWaypoints;
         catch
             disp("Fail to make new waypoints");
+            %pcshow(roiPtCloud);
+            %xlim([0 10])
+            %ylim([-5 5])
+    
+            %hold on;
+            %showShape('cuboid',y_coneBboxesLidar_r,'Opacity',0.5,'Color','green');
+            %showShape('cuboid',b_coneBboxesLidar_r,'Opacity',0.5,'Color','red');
+            %showShape('cuboid',y_coneBboxesLidar_l,'Opacity',0.5,'Color','blue');
+            %showShape('cuboid',b_coneBboxesLidar_l,'Opacity',0.5,'Color','red');
+            %return;
             continue; % 다음 while문 반복으로 넘어감
         end
     end
@@ -97,6 +110,19 @@ end
 
 
 %%
+function conePosition = extractConePositions(cuboidTreshold, coneBboxesLidar_l, coneBboxesLidar_r)
+    % Extract xlen, ylen, zlen from the bounding boxes
+    volumes_l = prod(coneBboxesLidar_l(:, 4:6), 2);
+    volumes_r = prod(coneBboxesLidar_r(:, 4:6), 2);
+
+    % Find indices where volumes are smaller than cuboidThreshold
+    indices_l = volumes_l > cuboidTreshold;
+    indices_r = volumes_r > cuboidTreshold;
+
+    % Combine the inner cone positions from left and right into a single array
+    conePosition = [coneBboxesLidar_l(indices_l, 1:2);coneBboxesLidar_r(indices_r, 1:2)];
+end
+
 function [y_coneBboxesLidar, b_coneBboxesLidar] = splitConesBboxes(y_coneBboxs,bboxesLidar,boxesUsed)
     % y_cone의 개수만 계산
     numY_cone = sum(boxesUsed(1:length(y_coneBboxs)));
@@ -195,12 +221,7 @@ function vehiclePose = getVehiclePose(tree, sourceFrame, targetFrame)
 end
 
 
-function pp = initialize_pure_pursuit_controller()
-    pp=controllerPurePursuit;
-    pp.LookaheadDistance=2.0;
-    pp.DesiredLinearVelocity=2.0;
-    pp.MaxAngularVelocity = 3.0;
-end
+
 
 function roiPtCloud = preprocess_lidar_data(lidarData, params, roi)
     xyzData = rosReadXYZ(lidarData);
@@ -278,7 +299,7 @@ function waypoints = generate_waypoints_del(innerConePosition, outerConePosition
     yp = []; 
 
     
-    interv=4;
+    interv=size(innerConePosition,1)+size(outerConePosition);
     %step 1 : delaunay triangulation
     tri=delaunayTriangulation(kockle_coords);
     pl=tri.Points;
@@ -316,24 +337,24 @@ function waypoints = generate_waypoints_del(innerConePosition, outerConePosition
     xmp=((xPo((Eodd(:,1))) + xPo((Eodd(:,2))))/2);
     ymp=((yPo((Eodd(:,1))) + yPo((Eodd(:,2))))/2);
     Pmp=[xmp ymp];
-
+    waypoints = Pmp;
 
 		    %step 4 : waypoint 보간
-    distancematrix = squareform(pdist(Pmp));
-    distancesteps = zeros(length(Pmp)-1,1);
-    for j = 2:length(Pmp)
-        distancesteps(j-1,1) = distancematrix(j,j-1);
-    end
-    totalDistance = sum(distancesteps); % total distance travelled
-    distbp = cumsum([0; distancesteps]); % distance for each waypoint
-    gradbp = linspace(0,totalDistance,100);
-    xq = interp1(distbp,xmp,gradbp,'spline'); % interpolate x coordinates
-    yq = interp1(distbp,ymp,gradbp,'spline'); % interpolate y coordinates
-    xp = [xp xq]; % store obtained x midpoints after each iteration
-    yp = [yp yq]; % store obtained y midpoints after each iteration
+    %distancematrix = squareform(pdist(Pmp));
+    %distancesteps = zeros(length(Pmp)-1,1);
+    %for j = 2:length(Pmp)
+    %    distancesteps(j-1,1) = distancematrix(j,j-1);
+    %end
+    %totalDistance = sum(distancesteps); % total distance travelled
+    %distbp = cumsum([0; distancesteps]); % distance for each waypoint
+    %gradbp = linspace(0,totalDistance,100);
+    %xq = interp1(distbp,xmp,gradbp,'spline'); % interpolate x coordinates
+    %yq = interp1(distbp,ymp,gradbp,'spline'); % interpolate y coordinates
+    %xp = [xp xq]; % store obtained x midpoints after each iteration
+    %yp = [yp yq]; % store obtained y midpoints after each iteration
     
 		    %step 5 : 최종 waypoint 생성
-    waypoints=[xp', yp'];
+    %waypoints=[xp', yp'];
 end
 
 function waypoints = generate_waypoints(innerConePosition, outerConePosition)
