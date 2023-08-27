@@ -11,18 +11,15 @@
 <p align="center">
   <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba" alt="Team Image" width="500"/>
 </p>
-Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.
+Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.  
 
-We are a passionate group of students from Sejong University dedicated to the field of autonomous driving. Our mission is to explore, learn, and innovate within the realm of self-driving technology.
-
-
+We are a passionate group of students from Sejong University dedicated to the field of autonomous driving. Our mission is to explore, learn, and innovate within the realm of self-driving technology.<br><br>
 ## Development Environment
 
 - Operating System: Ubuntu 20.04
 - ROS Version: ROS 1 Noetic
 - Matlab: 2023a
-
-
+<br><br>
 ## Simulation Environment
 
 We have utilized the **hunter2** model provided by [agilexrobotics](https://github.com/agilexrobotics/ugv_gazebo_sim) as the foundation for our simulation environment. To enhance its capabilities, we have integrated the following sensors:
@@ -31,7 +28,7 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 - IMU
 - Ouster 64-channel LiDAR
 - Left, Right Camera
-
+<br><br>
 ## YOLOv5 Cone Detection and Path Planning
 
 Our repository includes a built-in YOLOv5 model that has been trained to detect yellow and blue cones. Here's a deeper insight into our process:
@@ -46,8 +43,7 @@ Our repository includes a built-in YOLOv5 model that has been trained to detect 
 
 ### MATLAB Example Integration
 We have also incorporated a MATLAB example that demonstrates the entire process – from cone detection to path tracking. Interested users can access and run the example from `~/hunter_ws/matlab/TrackExample.m`.
-
-
+<br><br>
 ## Getting Started
 
 To begin with our project, follow these steps:
@@ -102,7 +98,7 @@ roslaunch hunter2_gazebo hunter2_main.launch
 `~/hunter_ws/matlab/TrackExample.m`
 
 ![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)
-
+<br><br>
 ## Contact Us
 
 If you're interested in our work or have any questions, feel free to reach out to us:
