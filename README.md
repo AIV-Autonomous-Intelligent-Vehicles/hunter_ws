@@ -1,16 +1,12 @@
 # hunter_ws from AIV
 
 <p align="center">
-  <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0a256086-1a51-4335-b14f-c5fa9bcaf9bb" alt="Team Image" width="500"/>
+  <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba" alt="Team Image" width="500"/>
 </p>
-
 
 
 
 ## About Us
-<p align="center">
-  <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba" alt="Team Image" width="500"/>
-</p>
 Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.  
 
 We are a passionate group of students from Sejong University dedicated to the field of autonomous driving. Our mission is to explore, learn, and innovate within the realm of self-driving technology.<br><br>
@@ -43,7 +39,11 @@ Our repository includes a built-in YOLOv5 model that has been trained to detect 
 
 ### MATLAB Example Integration
 We have also incorporated a MATLAB example that demonstrates the entire process – from cone detection to path tracking. Interested users can access and run the example from `~/hunter_ws/matlab/TrackExample.m`.
+<p align="center">
+  <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0a256086-1a51-4335-b14f-c5fa9bcaf9bb" alt="Team Image" width="500"/>
+</p>
 <br><br>
+
 ## Getting Started
 
 To begin with our project, follow these steps:
