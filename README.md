@@ -1,13 +1,16 @@
 # hunter_ws from AIV
-![IMG_5793](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba)
-![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)
-[Matlab Example]
+
+<p align="center">
+  <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0a256086-1a51-4335-b14f-c5fa9bcaf9bb" alt="Team Image" width="500"/>
+</p>
+
 
 Welcome to the official repository of AIV (Autonomous Intelligent Vehicles), the self-driving car club at Sejong University.
 
-
 ## About Us
-
+<p align="center">
+  <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba" alt="Team Image" width="500"/>
+</p>
 We are a passionate group of students from Sejong University dedicated to the field of autonomous driving. Our mission is to explore, learn, and innovate within the realm of self-driving technology.
 
 
@@ -83,8 +86,7 @@ source devel/setup.bash
 roslaunch hunter2_gazebo hunter2_main.launch
 ```
 
-![Screenshot from 2023-08-22 22-01-09](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/0b82c9bb-e685-4be6-be17-4f54bb118dfc)
-
+![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)
 
 ## Contact Us
 
