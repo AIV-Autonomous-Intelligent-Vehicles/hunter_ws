@@ -23,8 +23,17 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 - GPS
 - IMU
 - Ouster 64-channel LiDAR
-- Left, Right Camera
-<br><br>
+- Left, Right Camera<br>
+
+### Future Enhancements for Real-World Implementation
+
+While our primary focus is on the simulation environment, we are actively working towards implementing track driving in a real-world scenario. To achieve this, we are incorporating various sensors to enhance perception capabilities.   
+You can find the additional files and information for the sensors intended for real-world use at the `~/hunter_ws/src/realworld` directory.
+- GPS (**C099-F9P** with applied RTK correction signals)
+- IMU (**Xsens mti-3 AHRS**)
+
+<br>
+
 ## YOLOv5 Cone Detection and Path Planning
 
 Our repository includes a built-in YOLOv5 model that has been trained to detect yellow and blue cones. Here's a deeper insight into our process:
