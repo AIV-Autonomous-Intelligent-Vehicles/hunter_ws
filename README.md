@@ -79,13 +79,14 @@ catkin_make
 ### 4. Run Gazebo Simulation
 
 ```bash
-# Rviz
-cd hunter_ws
+# Gazebo
+cd ~/hunter_ws
 source devel/setup.bash
 
 roslaunch hunter2_gazebo hunter2_main.launch
 ```
-
+### 5. Matlab Example
+~/hunter_ws/matlab/TrackExample.m 
 ![ezgif-4-bbe45ece8a](https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/6eccb7c3-4d87-43f0-bf42-9e74edaf6abd)
 
 ## Contact Us
