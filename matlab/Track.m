@@ -5,17 +5,17 @@ tftree = rostf;
 pause(3);
 
 % Parameter//============================================================
-roi = [0, 10, -10, 10, -1, 2];
+roi = [0, 7, -7, 7, -1, 2];
 
-clusterThreshold = 0.3;
-cuboidTreshold = 0.0030; %default 0.0215
-waypointTreshold = 3;
+clusterThreshold = 0.3; % Cluster distance
+cuboidTreshold = 0.0020; % Ignore smaller than 0.003 cuboid (cone: 0.0215) 
+waypointTreshold = 3; % make a waypoint before 3m 
 
 
 pp=controllerPurePursuit;
-pp.LookaheadDistance=1.5;
-pp.DesiredLinearVelocity=1.5;
-pp.MaxAngularVelocity = 2.0;
+pp.LookaheadDistance=1.3; % m
+pp.DesiredLinearVelocity=2; % m/s
+pp.MaxAngularVelocity = 2.0; % rad/s
 
 % init//==================================================================
 waypoints = [];
@@ -28,6 +28,7 @@ detect_sub_l = rossubscriber('yolov5/cob_detections_l', 'cob_perception_msgs/Det
 detect_sub_r = rossubscriber('yolov5/cob_detections_r', 'cob_perception_msgs/DetectionArray');
 [pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
 pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
+modelStatesSub = rossubscriber('/gazebo/model_states');
 
 load("camera1.mat");
 camera1_tform = tform;
@@ -39,11 +40,35 @@ load("cameraParams.mat")
 
 figure;
 
-while true
+while true % ctrl + c to stop
     tic;
-    vehiclePoseInOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
+    %vehiclePoseOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
+    %vehiclePose = vehiclePoseOdom;
+
+    modelStatesMsg = receive(modelStatesSub);
+    robotIndex = find(strcmp(modelStatesMsg.Name, 'hunter2_base'));  
+    robotPose = modelStatesMsg.Pose(robotIndex);
+    quat = [robotPose.Orientation.W, robotPose.Orientation.X, robotPose.Orientation.Y, robotPose.Orientation.Z];
+    euler = quat2eul(quat);
+    yaw = euler(1);
+    vehiclePoseGT=[robotPose.Position.X; robotPose.Position.Y; yaw];
     
-    if isempty(pp.Waypoints) || norm(odomWaypoints(end,:)-[vehiclePoseInOdom(1), vehiclePoseInOdom(2)]) < waypointTreshold  % Considering only x and y for the distance
+    % TF 메시지 생성 및 설정
+    tfStampedMsg = rosmessage('geometry_msgs/TransformStamped');
+    tfStampedMsg.ChildFrameId = 'base_link';
+    tfStampedMsg.Header.FrameId = 'hunter2_base';
+    tfStampedMsg.Header.Stamp = rostime('now');
+    tfStampedMsg.Transform.Translation.X = vehiclePoseGT(1);
+    tfStampedMsg.Transform.Translation.Y = vehiclePoseGT(2);
+    tfStampedMsg.Transform.Rotation.Z = sin(vehiclePoseGT(3)/2);
+    tfStampedMsg.Transform.Rotation.W = cos(vehiclePoseGT(3)/2);
+    
+    % TF 브로드캐스팅
+    sendTransform(tftree, tfStampedMsg);
+
+    vehiclePose = vehiclePoseGT;
+
+    if isempty(pp.Waypoints) || norm(worldWaypoints(end,:)-[vehiclePose(1), vehiclePose(2)]) < waypointTreshold  % Considering only x and y for the distance
         disp("Make new waypoints");
         
         try
@@ -76,17 +101,19 @@ while true
             [innerConePosition, outerConePosition] = match_array_lengths(innerConePosition, outerConePosition);
             waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
 
-            odomWaypoints = transformWaypointsToOdom(waypoints, vehiclePoseInOdom);
+            worldWaypoints = transformWaypointsToOdom(waypoints, vehiclePose);
+            
 
             [markerArrayMsg, markerIdClusters] = generate_clusters_marker(innerConePosition, outerConePosition, 'base_footprint', markerIdClusters);
             send(pubClusters, markerArrayMsg);
 
-            [pathMarkerMsg, markerIdPath] = generate_path_marker(odomWaypoints, 'ackermann_steering_controller/odom', markerIdPath);
+            [pathMarkerMsg, markerIdPath] = generate_path_marker(worldWaypoints, 'hunter2_base', markerIdPath);
             send(pubPath, pathMarkerMsg);
      
-            pp.Waypoints = odomWaypoints;
+            pp.Waypoints = worldWaypoints;
         catch
             disp("Fail to make new waypoints");
+            % For check the exact clustering box//========================
             %pcshow(roiPtCloud);
             %xlim([0 10])
             %ylim([-5 5])
@@ -101,7 +128,7 @@ while true
         end
     end
 
-    [v, w] = pp(vehiclePoseInOdom);  % Pass the current vehicle pose to the path planner
+    [v, w] = pp(vehiclePose);  % Pass the current vehicle pose to the path planner
     [pub, msg] = publish_twist_command(v, w, '/ackermann_steering_controller/cmd_vel');
     send(pub, msg);
     toc;
@@ -110,6 +137,8 @@ end
 
 
 %%
+
+
 function conePosition = extractConePositions(cuboidTreshold, coneBboxesLidar_l, coneBboxesLidar_r)
     % Extract xlen, ylen, zlen from the bounding boxes
     volumes_l = prod(coneBboxesLidar_l(:, 4:6), 2);
@@ -299,7 +328,7 @@ function waypoints = generate_waypoints_del(innerConePosition, outerConePosition
     yp = []; 
 
     
-    interv=size(innerConePosition,1)+size(outerConePosition);
+    interv=size(innerConePosition,1)*2;
     %step 1 : delaunay triangulation
     tri=delaunayTriangulation(kockle_coords);
     pl=tri.Points;

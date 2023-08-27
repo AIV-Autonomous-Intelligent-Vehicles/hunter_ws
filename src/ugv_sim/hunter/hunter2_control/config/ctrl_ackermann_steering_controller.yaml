@@ -27,7 +27,8 @@ ackermann_steering_controller:
     base_frame_id: 'base_link'
 
     # Transform from odom -> base_link
-    enable_odom_tf: true
+    # enable_odom_tf: true
+    enable_odom_tf: false
     odom_frame_id: '/ackermann_steering_controller/odom'
 
     # Set to false if the motor driver provides velocity data. 
