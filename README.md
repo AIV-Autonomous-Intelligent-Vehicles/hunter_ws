@@ -61,9 +61,10 @@ sudo apt-get install ros-noetic-joint-state-publisher-gui -y
 sudo apt-get install ros-noetic-rqt-robot-steering -y
 sudo apt-get install ros-noetic-hector-gazebo-plugins -y
 sudo apt install ros-noetic-ackermann-steering-controller -y
-sudo apt install ros-noetic-cob-perception-msgs -y
-sudo apt install ros-noetic-mavros-msgs -y
-pip install --upgrade python-dateutil
+sudo apt install ros-noetic-cob-perception-msgs -y # for yolo
+sudo apt install ros-noetic-mavros-msgs -y # for gps
+sudo apt install sharutils -y # for imu
+pip install --upgrade python-dateutil # for yolo
 ```
 ### 2. Install Hunter2 Model
 
@@ -79,8 +80,10 @@ Install necessary dependencies and build the project using the following command
 ```bash
 cd ~/hunter_ws
 source /opt/ros/noetic/setup.bash
-pip install -r ./src/yolov5_ros/src/yolov5/requirements.txt
-chmod +x ./src/yolov5_ros/src/detect.py
+pip install -r ./src/simulation/yolov5_ros/src/yolov5/requirements.txt
+sudo chmod 777 -R ./src/realworld/imu/xsens_ros_mti_driver
+pushd ./src/realworld/imu/xsens_ros_mti_driver/lib/xspublic && make && popd 
+chmod +x ./src/simulation/yolov5_ros/src/detect.py
 rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
