@@ -42,31 +42,8 @@ figure;
 
 while true % ctrl + c to stop
     tic;
-    %vehiclePoseOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
-    %vehiclePose = vehiclePoseOdom;
-
-    modelStatesMsg = receive(modelStatesSub);
-    robotIndex = find(strcmp(modelStatesMsg.Name, 'hunter2_base'));  
-    robotPose = modelStatesMsg.Pose(robotIndex);
-    quat = [robotPose.Orientation.W, robotPose.Orientation.X, robotPose.Orientation.Y, robotPose.Orientation.Z];
-    euler = quat2eul(quat);
-    yaw = euler(1);
-    vehiclePoseGT=[robotPose.Position.X; robotPose.Position.Y; yaw];
     
-    % TF 메시지 생성 및 설정
-    tfStampedMsg = rosmessage('geometry_msgs/TransformStamped');
-    tfStampedMsg.ChildFrameId = 'base_link';
-    tfStampedMsg.Header.FrameId = 'hunter2_base';
-    tfStampedMsg.Header.Stamp = rostime('now');
-    tfStampedMsg.Transform.Translation.X = vehiclePoseGT(1);
-    tfStampedMsg.Transform.Translation.Y = vehiclePoseGT(2);
-    tfStampedMsg.Transform.Rotation.Z = sin(vehiclePoseGT(3)/2);
-    tfStampedMsg.Transform.Rotation.W = cos(vehiclePoseGT(3)/2);
-    
-    % TF 브로드캐스팅
-    sendTransform(tftree, tfStampedMsg);
-
-    vehiclePose = vehiclePoseGT;
+    vehiclePose = updateVehiclePose(modelStatesSub, tftree);
 
     if isempty(pp.Waypoints) || norm(worldWaypoints(end,:)-[vehiclePose(1), vehiclePose(2)]) < waypointTreshold  % Considering only x and y for the distance
         disp("Make new waypoints");
@@ -137,6 +114,34 @@ end
 
 
 %%
+function vehiclePose = updateVehiclePose(modelStatesSub, tftree)
+    %vehiclePoseOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
+    %vehiclePose = vehiclePoseOdom;
+
+    modelStatesMsg = receive(modelStatesSub);
+    robotIndex = find(strcmp(modelStatesMsg.Name, 'hunter2_base'));  
+    robotPose = modelStatesMsg.Pose(robotIndex);
+    quat = [robotPose.Orientation.W, robotPose.Orientation.X, robotPose.Orientation.Y, robotPose.Orientation.Z];
+    euler = quat2eul(quat);
+    yaw = euler(1);
+    vehiclePoseGT=[robotPose.Position.X; robotPose.Position.Y; yaw];
+
+    % TF 메시지 생성 및 설정
+    tfStampedMsg = rosmessage('geometry_msgs/TransformStamped');
+    tfStampedMsg.ChildFrameId = 'base_link';
+    tfStampedMsg.Header.FrameId = 'hunter2_base';
+    tfStampedMsg.Header.Stamp = rostime('now');
+    tfStampedMsg.Transform.Translation.X = vehiclePoseGT(1);
+    tfStampedMsg.Transform.Translation.Y = vehiclePoseGT(2);
+    tfStampedMsg.Transform.Rotation.Z = sin(vehiclePoseGT(3)/2);
+    tfStampedMsg.Transform.Rotation.W = cos(vehiclePoseGT(3)/2);
+
+    % TF 브로드캐스팅
+    sendTransform(tftree, tfStampedMsg);
+
+    vehiclePose = vehiclePoseGT;
+
+end
 
 
 function conePosition = extractConePositions(cuboidTreshold, coneBboxesLidar_l, coneBboxesLidar_r)
