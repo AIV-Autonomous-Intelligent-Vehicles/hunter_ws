@@ -14,7 +14,7 @@ waypointTreshold = 3; % make a waypoint before 3m
 
 pp=controllerPurePursuit;
 pp.LookaheadDistance=1.3; % m
-pp.DesiredLinearVelocity=2; % m/s
+pp.DesiredLinearVelocity=1.5; % m/s
 pp.MaxAngularVelocity = 2.0; % rad/s
 
 % init//==================================================================
@@ -24,11 +24,16 @@ markerIdClusters = 0;
 params = lidarParameters('OS1Gen1-64',512);
 
 lidarSub = rossubscriber('/lidar/points', "DataFormat", "struct");
-detect_sub_l = rossubscriber('yolov5/cob_detections_l', 'cob_perception_msgs/DetectionArray');
-detect_sub_r = rossubscriber('yolov5/cob_detections_r', 'cob_perception_msgs/DetectionArray');
+%detect_sub_l = rossubscriber('yolov5/cob_detections_l', 'cob_perception_msgs/DetectionArray');
+%detect_sub_r = rossubscriber('yolov5/cob_detections_r', 'cob_perception_msgs/DetectionArray');
 [pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
 pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
 modelStatesSub = rossubscriber('/gazebo/model_states');
+client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects',DataFormat='struct');
+request_l = rosmessage(client);
+request_l.ObjectName.Data = 'left';
+request_r = rosmessage(client);
+request_r.ObjectName.Data = 'right';
 
 load("camera1.mat");
 camera1_tform = tform;
@@ -50,13 +55,13 @@ while true % ctrl + c to stop
         
         try
             lidarData = receive(lidarSub);
-            bboxData_r = receive(detect_sub_r);
-            bboxData_l = receive(detect_sub_l);
+            bboxData_r = call(client, request_r);
+            bboxData_l = call(client, request_l);
 
             roiPtCloud = preprocess_lidar_data(lidarData, params, roi);
             
-            [y_coneBboxs_l, b_coneBboxs_l] = extractConesBboxs(bboxData_l);
-            [y_coneBboxs_r, b_coneBboxs_r] = extractConesBboxs(bboxData_r);
+            [y_coneBboxs_l, b_coneBboxs_l] = extractConesBboxs(bboxData_l.ObjectList);
+            [y_coneBboxs_r, b_coneBboxs_r] = extractConesBboxs(bboxData_r.ObjectList);
             
             [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams,tformCamera2,'ClusterThreshold',clusterThreshold);
             [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams,tformCamera1,'ClusterThreshold',clusterThreshold);

@@ -71,6 +71,7 @@ sudo apt-get install ros-noetic-rqt-robot-steering -y
 sudo apt-get install ros-noetic-hector-gazebo-plugins -y
 sudo apt install ros-noetic-ackermann-steering-controller -y
 sudo apt install ros-noetic-cob-perception-msgs -y # for yolo
+sudo apt install ros-noetic-cob-object-detection-msgs -y # for yolo
 sudo apt install ros-noetic-mavros-msgs -y # for gps
 sudo apt install sharutils -y # for imu
 pip install --upgrade python-dateutil # for yolo
