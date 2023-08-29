@@ -62,16 +62,8 @@ To begin with our project, follow these steps:
 Execute the following commands to install ROS dependencies:
 
 ```bash
-sudo apt-get install ros-noetic-ros-control -y
-sudo apt-get install ros-noetic-ros-controllers -y
-sudo apt-get install ros-noetic-gazebo-ros -y
-sudo apt-get install ros-noetic-gazebo-ros-control -y
-sudo apt-get install ros-noetic-joint-state-publisher-gui -y
-sudo apt-get install ros-noetic-rqt-robot-steering -y
-sudo apt-get install ros-noetic-hector-gazebo-plugins -y
-sudo apt install ros-noetic-ackermann-steering-controller -y
-sudo apt install ros-noetic-cob-perception-msgs -y # for yolo
-sudo apt install ros-noetic-cob-object-detection-msgs -y # for yolo
+sudo apt-get install -y ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-gazebo-ros ros-noetic-gazebo-ros-control ros-noetic-joint-state-publisher-gui ros-noetic-rqt-robot-steering ros-noetic-hector-gazebo-plugins ros-noetic-ackermann-steering-controller -y
+sudo apt install -y ros-noetic-cob-perception-msgs ros-noetic-cob-object-detection-msgs # for yolo
 sudo apt install ros-noetic-mavros-msgs -y # for gps
 sudo apt install sharutils -y # for imu
 sudo apt install -y ros-noetic-pcl-ros ros-noetic-rviz ros-noetic-tf2-geometry-msgs # ouster lidar
