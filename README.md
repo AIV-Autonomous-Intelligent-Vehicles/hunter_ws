@@ -31,6 +31,7 @@ While our primary focus is on the simulation environment, we are actively workin
 You can find the additional files and information for the sensors intended for real-world use at the `~/hunter_ws/src/realworld` directory.
 - GPS (**C099-F9P** with applied RTK correction signals)
 - IMU (**Xsens mti-3 AHRS**)
+- Lidar (**Ouster OS-1 64ch**)
 
 <br>
 
