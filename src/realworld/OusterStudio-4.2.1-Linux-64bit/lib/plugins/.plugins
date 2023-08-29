@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Plugins>
+  <Plugin name="DigitalRockPhysics" auto_load="0" />
+  <Plugin name="EmbossingRepresentations" auto_load="0" />
+  <Plugin name="EyeDomeLightingView" auto_load="0" />
+  <Plugin name="MooseXfemClip" auto_load="0" />
+  <Plugin name="PointCloudPlugin" auto_load="0" />
+  <Plugin name="PythonQtPlugin" auto_load="0" />
+  <Plugin name="VTKmFilters" auto_load="0" />
+  <Plugin name="DatasetIOPlugin" auto_load="0" />
+</Plugins>
