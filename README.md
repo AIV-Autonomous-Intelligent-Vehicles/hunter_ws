@@ -30,9 +30,22 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 While our primary focus is on the simulation environment, we are actively working towards implementing track driving in a real-world scenario. To achieve this, we are incorporating various sensors to enhance perception capabilities.   
 You can find the additional files and information for the sensors intended for real-world use at the `~/hunter_ws/src/realworld` directory.
 - GPS (**C099-F9P** with applied RTK correction signals)
+```bash
+roslaunch ntrip_client ntrip_client.launch # RTK
+roslaunch ublox_gps ublox_device.launch    # GPS
+```
 - IMU (**Xsens mti-3 AHRS**)
+```bash
+roslaunch xsens_mti_driver display.launch
+```
 - Lidar (**Ouster OS-1 64ch**)
-
+```bash
+roslaunch ouster_ros sensor.launch sensor_hostname:=192.168.6.11 upd_dest:=192.168.6.99
+```
+- Camera (**Ouster OS-1 64ch**)
+```bash
+roslaunch usb_cam usb_cam-test.launch
+```
 <br>
 
 ## YOLOv5 Cone Detection and Path Planning
@@ -69,6 +82,7 @@ sudo apt install ros-noetic-mavros-msgs -y # for gps
 sudo apt install sharutils -y # for imu
 sudo apt install -y ros-noetic-pcl-ros ros-noetic-rviz ros-noetic-tf2-geometry-msgs # ouster lidar
 sudo apt install -y build-essential libeigen3-dev libjsoncpp-dev libcurl4-openssl-dev libspdlog-dev # ouster lidar
+sudo apt install -y libv4l-dev
 pip install --upgrade python-dateutil # for yolo
 ```
 ### 2. Install Hunter2 Model
