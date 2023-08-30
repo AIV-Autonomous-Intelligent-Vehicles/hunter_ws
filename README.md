@@ -33,7 +33,7 @@ You can find the additional files and information for the sensors intended for r
 
 
 <details>
-<summary>GPS (**C099-F9P** with applied RTK correction signals)</summary>
+<summary>GPS (C099-F9P with applied RTK correction signals)</summary>
 <div markdown="1">
   
 ```bash
