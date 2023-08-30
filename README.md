@@ -69,6 +69,7 @@ sudo apt install ros-noetic-mavros-msgs -y # for gps
 sudo apt install sharutils -y # for imu
 sudo apt install -y ros-noetic-pcl-ros ros-noetic-rviz ros-noetic-tf2-geometry-msgs # ouster lidar
 sudo apt install -y build-essential libeigen3-dev libjsoncpp-dev libcurl4-openssl-dev libspdlog-dev # ouster lidar
+sudo apt install -y libv4l-dev
 pip install --upgrade python-dateutil # for yolo
 ```
 ### 2. Install Hunter2 Model
