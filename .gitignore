@@ -565,3 +565,5 @@ src/realworld/imu/xsens_ros_mti_driver/lib/xspublic/xstypes/xsversion.c.o
 src/realworld/imu/xsens_ros_mti_driver/lib/xspublic/xstypes/xsversion.d
 
 matlab/TFtest.asv
+
+matlab/updateVehiclePose.m

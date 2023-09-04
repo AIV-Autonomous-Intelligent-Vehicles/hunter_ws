@@ -29,23 +29,93 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 
 While our primary focus is on the simulation environment, we are actively working towards implementing track driving in a real-world scenario. To achieve this, we are incorporating various sensors to enhance perception capabilities.   
 You can find the additional files and information for the sensors intended for real-world use at the `~/hunter_ws/src/realworld` directory.
-- GPS (**C099-F9P** with applied RTK correction signals)
+
+
+
+<details>
+<summary>GPS (C099-F9P with applied RTK correction signals)</summary>
+<div markdown="1">
+  
 ```bash
 roslaunch ntrip_client ntrip_client.launch # RTK
 roslaunch ublox_gps ublox_device.launch    # GPS
 ```
-- IMU (**Xsens mti-3 AHRS**)
+
+</div>
+</details>
+
+<details>
+<summary>IMU (Xsens mti-3 AHRS)</summary>
+<div markdown="1">
+  
 ```bash
 roslaunch xsens_mti_driver display.launch
 ```
-- Lidar (**Ouster OS-1 64ch**)
+
+</div>
+</details>
+
+
+
+
+<details>
+<summary>Lidar (Ouster OS-1 64ch)</summary>
+<div markdown="1">
+  
 ```bash
 roslaunch ouster_ros sensor.launch sensor_hostname:=192.168.6.11 upd_dest:=192.168.6.99
 ```
-- Camera (**Ouster OS-1 64ch**)
+
+</div>
+</details>
+  
+<details>
+<summary>Camera</summary>
+<div markdown="1">
+
 ```bash
+# pc에 연결된 cam port의 이름이 무엇인지 확인을 해야한다.
+# 필자는 다음과 같은 명령어를 실행했을 때, /dev/video0, /dev/video1 이렇게 두가지가 나왔음 
+ls /dev/video* 
+
+# root 권한을 추가하기 위해 내 desktop의 이름을 확인한다. 
+whoami
+
+# root 권한으로 카메라를 사용할 수 있도록 허용한다. 
+sudo adduser (whoami로 출력된 사용자 이름) video
+
+# 리눅스에서 비디오 및 오디오 장치를 지원하기 위한 API와 도구 모음을 설치한다. 
+sudo apt-get install v4l-utils -y 
+
+# 현재 장착되어 있는 usb들을 확인을 한다.(HD Pro WebCam  C920 아래에 출력된 /dev/video* 들을 가지고 무엇이 맞는지 확인할 것임)  
+v4l2-ctl --list-devices
+
+# 카메라가 지닌 파라미터를 확인하는 명령어를 가지고 어떤 device를 골라야하는지 확인하면 된다.
+v4l2-ctl -d /dev/(HD Pro WebCam C920 아래에 출력된 device들을 차례로 넣어보면서 parameter 값이 나오는 device를 선택하면 된다.) --list-ctrls
+
+
+# 파라미터 수정을 위해 .sh 파일을 작성한다. 
+gedit fixcam.sh
+
+# 빈 텍스트 창이 열리면, 아래의 내용을 입력한다. 
+v4l2-ctl -d /dev/(본인의 device) --set-ctrl=focus_automatic_continuous=0
+
+# .sh 파일을 적용시킨다. 
+source ~/fixcam.sh
+
+# 바뀐 변수를 확인한다. 
+v4l2-ctl -d /dev/(본인의 device) --list-ctrls
+
+# 앞 내용을 전부 진행하고 hunter_ws/src/realworld 경로에서 실행시킬 경우, cam이 나오지 않음
+# 진행중이던 터미널을 모두 닫고 새로 시작하면 cam이 정상적으로 작동하는 것을 확인할 수 있음
+cd hunter_ws/src/realworld
+noetic
 roslaunch usb_cam usb_cam-test.launch
 ```
+
+</div>
+</details>
+
 <br>
 
 ## YOLOv5 Cone Detection and Path Planning
