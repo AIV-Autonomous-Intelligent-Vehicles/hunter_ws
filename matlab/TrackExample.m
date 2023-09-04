@@ -164,7 +164,7 @@ end
 
 function [y_coneBboxesLidar, b_coneBboxesLidar] = splitConesBboxes(y_coneBboxs,bboxesLidar,boxesUsed)
     % y_cone의 개수만 계산
-    numY_cone = sum(boxesUsed(1:length(y_coneBboxs)));
+    numY_cone = sum(boxesUsed(1:size(y_coneBboxs,1)));
     
     % bboxesLidar에서 y_cone와 b_cone의 bbox 분류
     y_coneBboxesLidar = bboxesLidar(1:numY_cone, :);
