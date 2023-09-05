@@ -50,6 +50,7 @@ roslaunch ublox_gps ublox_device.launch    # GPS
   
 ```bash
 roslaunch xsens_mti_driver display.launch
+# ~/hunter_ws/src/realworld/imu/mtmanager/linux-x64/bin/mtmanager # for MT Manager
 ```
 
 </div>
