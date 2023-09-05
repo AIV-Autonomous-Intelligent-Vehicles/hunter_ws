@@ -240,7 +240,7 @@ class Yolov5Detector:
                     plus_s = 's'
                 else :
                     plus_s = ''
-                rs += f"Right : {count} {class_name}{plus_s}, "
+                rs += f"Detect : {count} {class_name}{plus_s}, "
             rs = rs[:-2]
             print(rs + '\t')
 
