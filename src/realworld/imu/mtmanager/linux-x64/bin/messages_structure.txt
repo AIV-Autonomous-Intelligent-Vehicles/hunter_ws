@@ -1,0 +1,409 @@
+%   comment lines start with '%'
+%   empty lines are OK
+%   whitespace after separators (e.g. ',') are OK
+%   note that spaces may be part of names so a space after a name before a separator is part of the name
+%   note: values have to be unique within a line type
+%
+% 	Line format <type, description, value, dataformat>
+%
+%	data format
+%	----------------------
+%	The syntax of the data format string is:
+%
+%	<data_format> : <set>
+%				  | <tuple>
+%				  | <field>
+%
+%	<set> : '{' <data_format> '}'
+%
+%	<tuple> : '(' <data_format> ')'
+%
+%	<field> : '<' <size> ',' <type_name> ',' <instance_name> ',' <display_name>
+%
+%	<size>		  : INTEGER
+%	              | STRING  // In this case the string should be an instance name of another field
+%	<size> is the size in bytes of the field and may be dynamic by using an instance name of another field
+%
+%   <type_name>	 : STRING <type_args>
+%	<type_args	 : '(' <commma separated STRING list> ')'
+%				 | null (nothing)
+%
+%	<type_name> is the type name of the field.
+%	It can be one of the builtin typenames, a typename that is defined in the data structure file (for enums) or a custom name
+%	It can have arguments. Intepretation of arguments is code specific
+%
+%	<instance_name> : STRING
+%	<instance_name> is the instance (or variable) name of the field. This name can be used to refer to the field while generating
+%	human readable data or edit widgets
+%
+%	<display_name>  : STRING
+%	<display_name> is the name displayed in the human readable string or editors while showing this field (if not overrided)
+%
+%	builtin <type_name>'s:
+%		Integer fields:  "uint8", "uint16", "uint32", "int8", "int16", "int32"
+%		Float fields: "float32", "float64", "fp1220", "fp1632"
+%		Bit fields: "bits8", "bits16", "bits32"
+%		Hex fields: "hex8", "hex16", "hex32", "hex64"
+%		Ascii field: "ascii" (displays bytes as chars)
+%		Null field: "null" (means no data (0 bytes)
+%		XDI fields: "xdi" an xdi field has a XDI type and an XDI format e.g. XDI_EulerAngles and XDI_SubFormatDouble
+%					"xdidata" an xdidata field has data with a customizable format as specified in an earlier xdi field
+%					"xdireal" an xdireal field is a customizable float field as specified in an earlier xdi field
+%		Size field: "size" this field is a size field. (Has customized printing)
+
+% XDI format information
+xdi_format, Float, 0000, <4,float32,float1,>
+xdi_format, Fp1220, 0001, <4,fp1220,float1,>
+xdi_format, Fp1632, 0002, <6,fp1632,float1,>
+xdi_format, Double, 0003, <8,float64,float1,>
+
+% XDI coordinate system information
+xdi_coord, ENU, 0000,
+xdi_coord, NED, 0004,
+xdi_coord, NWU, 0008,
+xdi_coord, UNDEFINED, 000C,
+
+% XDI name information
+% ---------------
+xdi, Temperature, 0810, <0,xdireal,temp,Temp>
+xdi, UtcTime, 1010, (<4,uint32,ns,ns>,<2,uint16,year,Year>,<1,uint8,month,Month>,<1,uint8,day,Day>,<1,uint8,hour,Hour>,<1,uint8,minute,Minute>,<1,uint8,second,Second>,<1,uint8,flags,Flags>)
+xdi, PacketCounter, 1020, <2,uint16,value1,>
+xdi, Itow, 1030, <4,uint32,tow,TimeOfWeek>
+xdi, GpsAge, 1040, <1,uint8,gpsage,gpsAge>
+xdi, PressureAge, 1050, <1,uint8,pressureage,pressureAge>
+xdi, SampleTimeFine, 1060, <4,uint32,value1,>
+xdi, SampleTimeCoarse, 1070, <4,uint32,value1,>
+xdi, FrameRange, 1080, (<2,uint16,start,start>,<2,uint16,end,end>)
+xdi, PacketCounter8, 1090, <1,uint8,value1,>
+xdi, Quaternion, 2010, (<0,xdireal,q0,q0>,<0,xdireal,q1,q1>,<0,xdireal,q2,q2>,<0,xdireal,q3,q3>)
+xdi, RotationMatrix, 2020, (<0,xdireal,a,a>,<0,xdireal,b,b>,<0,xdireal,c,c>,<0,xdireal,d,d>,<0,xdireal,e,e>,<0,xdireal,f,f>,<0,xdireal,g,g>,<0,xdireal,h,h>,<0,xdireal,i,i>)
+xdi, EulerAngles, 2030, (<0,xdireal,roll,Roll>,<0,xdireal,pitch,Pitch>,<0,xdireal,yaw,Yaw>)
+xdi, BaroPressure, 3010, <4,uint32,value,Pressure>
+xdi, DeltaV, 4010, (<0,xdireal,x,x>,<0,xdireal,y,y>,<0,xdireal,z,z>)
+xdi, Acceleration, 4020, (<0,xdireal,x,accX>,<0,xdireal,y,accY>,<0,xdireal,z,accZ>)
+xdi, FreeAcceleration, 4030, (<0,xdireal,x,freeAccX>,<0,xdireal,y,freeAccY>,<0,xdireal,z,freeAccZ>)
+xdi, AccelerationHR, 4040, (<0,xdireal,x,accX>,<0,xdireal,y,accY>,<0,xdireal,z,accZ>)
+xdi, AltitudeMsl, 5010, <0,xdireal,altMsl,altMsl>
+xdi, AltitudeEllipsoid, 5020, <0,xdireal,altellipsoid,altEllipsoid>
+xdi, PositionEcef, 5030, (<0,xdireal,ecefx,ecefX>,<0,xdireal,ecefy,ecefY>,<0,xdireal,ecefz,ecefZ>)
+xdi, LatLon, 5040, (<0,xdireal,lat,lat>,<0,xdireal,lon,lon>)
+xdi, RateOfTurn, 8020, (<0,xdireal,x,gyrX>,<0,xdireal,y,gyrY>,<0,xdireal,z,gyrZ>)
+xdi, RateOfTurnHR, 8040, (<0,xdireal,x,gyrX>,<0,xdireal,y,gyrY>,<0,xdireal,z,gyrZ>)
+xdi, DeltaQ, 8030, (<0,xdireal,q0,q0>,<0,xdireal,q1,q1>,<0,xdireal,q2,q2>,<0,xdireal,q3,q3>)
+xdi, GpsDop, 8830, (<4,uint32,itow,iTOW>,<2,uint16,gdop,gDOP>,<2,uint16,pdop,pDOP>,<2,uint16,top,tDOP>,<2,uint16,vdop,vDOP>,<2,uint16,hdop,hDOP>,<2,uint16,ndop,nDOP>,<2,uint16,edop,eDOP>)
+xdi, GpsSol, 8840, (<4,uint32,itow,iTOW>,<4,int32,ftow,fTOW>,<2,int16,week,Week>,<1,uint8,gpsFix,gpsFix>,<1,bits8,flags,Flags>,<4,int32,ecefX,ecefX>,<4,int32,ecefY,ecefY>,<4,int32,ecefZ,ecefZ>,<4,uint32,pAcc,pAcc>,<4,int32,ecefVX,ecefVX>,<4,int32,ecefVY,ecefVY>,<4,int32,ecefVZ,ecefVZ>,<4,uint32,sAcc,sAcc>,<2,uint16,pdop,pDOP>,<1,int8,reserved1,reserved>,<1,int8,numsv,numSV>,<1,int8,reserved2,reserved>)
+xdi, GpsTimeUtc, 8880, (<4,uint32,itow,iTOW>,<4,uint32,tacc,tAcc>,<4,int32,nano,nano>,<2,uint16,year,year>,<1,uint8,month,month>,<1,uint8,day,day>,<1,uint8,hour,hour>,<1,uint8,min,min>,<1,uint8,sec,sec>,<1,bits8,valid,valid>)
+xdi, GpsSvInfo, 88A0, (<4,uint32,itow,iTOW>,<1,uint8,numch,numCh>,<1,uint8,reserved1,reserved>,<1,uint8,reserved2,reserved>,{(<1,uint8,chn,chn>,<1,uint8,svid,svid>,<1,bits8,flags,flags>,<1,uint8,quality,quality>,<1,uint8,cno,cno>,<1,int8,elev,elev>,<2,int16,azim,azim>,<4,int32,prres,prRes>)})
+xdi, GnssPvtData, 7010, (<4,uint32,itow,iTOW>, <2,uint16,year,year>, <1,uint8,month,month>, <1,uint8,day,day>, <1,uint8,hour,hour>, <1,uint8,min,min>, <1,uint8,sec,sec>, <1,uint8,valid,valid>, <4,uint32,tacc,tAcc>, <4,int32,nano,nano>, <1,uint8,fixtype,fixType>, <1,uint8,flags,flags>, <1,uint8,numsv,numSv>, <1,uint8,reserved,reserved>, <4,int32,lon,lon>, <4,int32,lat,lat>, <4,int32,height,height>, <4,int32,hmsl,hMsl>, <4,uint32,hacc,hAcc>, <4,uint32,vacc,vAcc>, <4,int32,veln,velN>, <4,int32,vele,velE>, <4,int32,veld,velD>, <4,int32,gspeed,gSpeed>, <4,int32,headmot,headMot>, <4,uint32,sacc,sAcc>, <4,uint32,headacc,headAcc>, <4,int32,headveh,headVeh>, <2,uint16,gdop,gDop>, <2,uint16,pdop,pDop>, <2,uint16,tdop,tDop>, <2,uint16,vdop,vDop>, <2,uint16,hdop,hDop>, <2,uint16,ndop,nDop>, <2,uint16,edop,eDop>)
+xdi, GnssSatInfo, 7020, (<4,uint32,itow,iTOW>,<1,uint8,numch,numCh>,<1,uint8,reserved1,reserved>,<1,uint8,reserved2,reserved>,<1,uint8,reserved3,reserved>,{(<1,uint8,gnssid,gnssId>,<1,uint8,svid,svid>,<1,uint8,cno,cno>,<1,uint8,flags,flags>)})
+xdi, GnssPvtPulse, 7030, <4,uint32,value1,>
+xdi, RawAccGyrMagTemp, A010, (<2,uint16,accx,accX>,<2,uint16,accy,accY>,<2,uint16,accZ,accZ>,<2,uint16,gyrx,gyrX>,<2,uint16,gyry,gyrY>,<2,uint16,gyrz,gyrZ>,<2,uint16,magx,magX>,<2,uint16,magy,magY>,<2,uint16,magz,magZ>,<2,int16,temp,Temp>)
+xdi, RawGyroTemp, A020, (<2,int16,tempGyrX,tempGyrX>,<2,int16,tempGyrY,tempGyrY>,<2,int16,tempGyrZ,tempGyrZ>)
+xdi, RawAcc, A030, (<2,uint16,accx,accX>,<2,uint16,accy,accY>,<2,uint16,accZ,accZ>)
+xdi, RawGyr, A040, (<2,uint16,gyrx,gyrX>,<2,uint16,gyry,gyrY>,<2,uint16,gyrZ,gyrZ>)
+xdi, RawMag, A050, (<2,uint16,magx,magX>,<2,uint16,magy,magY>,<2,uint16,magZ,magZ>)
+xdi, AnalogIn1, B010, <2,uint16,analogin1,analogIn1>
+xdi, AnalogIn2, B020, <2,uint16,analogin2,analogIn2>
+xdi, MagneticField, C020, (<0,xdireal,x,magX>,<0,xdireal,y,magY>,<0,xdireal,z,magZ>)
+xdi, MagneticFieldCorrected, C040, (<0,xdireal,x,magX>,<0,xdireal,y,magY>,<0,xdireal,z,magZ>)
+xdi, VelocityXYZ, D010, (<0,xdireal,velx,velX>,<0,xdireal,vely,velY>,<0,xdireal,velz,velZ>)
+xdi, StatusByte, E010, <1,bits8,status,>
+xdi, StatusWord, E020, <4,bits32,status,>
+xdi, Rssi, E040, <1,int8,rssi,RSSI>
+xdi, DeviceId, E080, <4, uint32, devid, devId>
+xdi, LocationId, E090, <2, uint16, locid, locId>
+xdi, Accuracy, F000,
+xdi, GpsHAcc, F010,
+xdi, GpsVAcc, F020,
+xdi, GpsSAcc, F030,
+xdi, TriggerIn1, 4810, (<1,uint8,line,Line>, <1,uint8,polarity,Polarity>, <4,uint32,timestamp,Timestamp>, <2,uint16,framenumber,FrameNumber>)
+xdi, TriggerIn2, 4820, (<1,uint8,line,Line>, <1,uint8,polarity,Polarity>, <4,uint32,timestamp,Timestamp>, <2,uint16,framenumber,FrameNumber>)
+
+
+% MID information
+% ---------------
+mid, ReqDID, 0, <0,null,null,>
+mid, DeviceID, 1, <4,hex32,id,DeviceID>
+mid, InitMT, 2, <0,null,null,>
+mid, InitMTResults, 3, <4,hex32,id,DeviceID>
+mid, ReqDataLength, 0A, <0,null,null,>
+mid, DataLength, 0B, <2,uint8,len,Data Length>
+mid, ReqConfiguration, 0C, <0,null,null,>
+mid, Configuration, 0D, (<4,hex32,did1,DeviceID>,<2,uint16,sampleperiod,Sample Period>,<2,uint16,sf,OutputSkipFactor>,<2,uint16,syncinmode,SyncInMode>,<2,uint16,syninsf,SyncInSkipFactor>,<4,uint32,syncinoffs,SyncInOffset>,(<4,uint32,yyyy,Year>,<2,uint16,mm,Month>,<2,uint16,dd,Day>),(<2,uint16,hh,Hour>,<2,uint16,mm,Min>,<2,uint16,ss,Sec>,<2,uint16,ms,Ms>),<32,reserved,reserved1,reserved>,<32,reserved,reserved2,reserved>,<2,uint16,numdev,numDevices>,<4,hex32,did2,DeviceID>,<2,uint16,len,MTDataLength>,<2,uint16,omode,OutputMode>,<4,uint32,osettings,OutputSettings>,<8,reserved,reserved3,reserved>)
+mid, RestoreFactoryDef, 0E, <0,null,null,>
+mid, RestoreFactoryDefAck, 0F, <0,null,null,>
+mid, GoToMeasurement, 10, <0,null,null,>
+mid, GotoMeasurementAck, 11, <0,null,null,>
+mid, ReqFWRev, 12, <0,null,null,>
+%What is the correct format here? mid, FirmwareRev, 13, (<1,uint8,major,major>,<1,uint8,minor,minor>,<1,uint8,revision,revision>,<4,uint32,buildnr,BuildNr>,<4,uint32,buildsvn,BuildSvn>)
+mid, FirmwareRev, 13, (<1,uint8,major,major>,<1,uint8,minor,minor>,<1,uint8,revision,revision>,<4,uint32,buildnr,buildnr>,<4,uint32,svnrev,svnrev>)
+mid, ReqUniqueId, 14, <0,null,null,>
+mid, UniqueId, 15, <8,hex64,uniqueid,UniqueId>
+mid, [Req/Set]Baudrate, 18, <1,baudrate,baudrate,Baudrate>
+mid, [Set/Req]BaudrateAck, 19, <1,baudrate,baudrate,Baudrate>
+mid, ReqProductVariant, 1A, <0,null,null,>
+mid, ProductVariant, 1B, <4,uint32,productvariant,ProductVariant>
+mid, ReqProductCode, 1C, <0,null,null,>
+mid, ProductCode, 1D, <20,ascii(true),code,productCode>
+mid, [Req/Set]ProcessingFlags, 20, <1,bits8,flags,Flags>
+mid, ProcessingFlags, 21, <1,bits8,flags,Flags>
+mid, SetNoRotation, 22, <2,uint16,duration,Duration>
+mid, SetNoRotationAck, 23, <0,null,null,>
+mid, RunSelfTest, 24, <0,null,null,>
+mid, SelfTestAck, 25, <2,bits16,result,Result>
+mid, [Req/Set]SyncSettings, 2C, {(<1,synceventaction,action,Action>,<1,syncline,line,Line>,<1,uint8,polarity,Polarity>,<1,uint8,triggeronce,TriggerOnce>,<2,uint16,skipfirst,SkipFirst>,<2,uint16,skipfactor,SkipFactor>,<2,uint16,pulsewidth,PulseWidth>,<2,uint16,delay,Delay/Freq>)}
+mid, SyncSettings, 2D, {(<1,synceventaction,action,Action>,<1,syncline,line,Line>,<1,uint8,polarity,Polarity>,<1,uint8,triggeronce,TriggerOnce>,<2,uint16,skipfirst,SkipFirst>,<2,uint16,skipfactor,SkipFactor>,<2,uint16,pulsewidth,PulseWidth>,<2,uint16,delay,Delay/Freq>)}
+mid, GoToConfig, 30, <0,null,null,>
+mid, GoToConfigAck, 31, <0,null,null,>
+mid, MTData, 32,
+mid, ReqData, 34, <0,null,null,>
+mid, ReqDataAck, 35,
+mid, MTData2, 36, {(<2,xdi,xdi1,XDI>,<1,size,size1,Size>,<size1,xdidata,data1,data>)}
+mid, WakeUp, 3E, <0,null,null,>
+mid, WakeUpAck, 3F, <0,null,null,>
+mid, Reset, 40, <0,null,null,>
+mid, ResetAck, 41, <0,null,null,>
+mid, Error, 42, <1,error,error,errorCode>
+mid, Warning, 43, <4,uint32,warning,warningCode>
+mid, [Req/Set]UTCTime,60, (<4,uint32,nanoseconds,ns>,<2,uint16,year,Year>,<1,uint8,month,Month>,<1,uint8,day,Day>,<1,uint8,hour,Hour>,<1,uint8,min,Min>,<1,uint8,sec,Sec>,<1,bits8,valid,Valid>)
+mid, UTCTime, 61, (<4,uint32,nanoseconds,ns>,<2,uint16,year,Year>,<1,uint8,month,Month>,<1,uint8,day,Day>,<1,uint8,hour,Hour>,<1,uint8,min,Min>,<1,uint8,sec,Sec>,<1,bits8,valid,Valid>)
+mid, ReqAvailableFilterProfiles, 62, <0,null,null,>
+mid, AvailableFilterProfiles, 63, {(<1,uint8,type,FilterProfileType>,<1,uint8,version,Version>,<20,ascii(true),label,Label>)}
+mid, [Req/Set]FilterProfile, 64, <2,uint16,filterProfile,FilterProfile>
+mid, FilterProfile, 65, <2,uint16,filterProfile,FilterProfile>
+mid, [Req/Set]GravityMagnitude, 66, <4,float32,gravity,Gravity>
+mid, GravityMagnitude, 67, <4,float32,gravity,Gravity>
+mid, [Req/Set]LeverArmGps, 68, (<4,float32,x,x>,<4,float32,y,y>,<4,float32,z,z>)
+mid, LeverArmGps, 69, (<4,float32,x,x>,<4,float32,y,y>,<4,float32,z,z>)
+mid, [Req/Set]MagneticDeclination, 6A, <4,float32,magdec,MagneticDeclination>
+mid, MagneticDeclination, 6B, <4,float32,magdec,MagneticDeclination>
+mid, [Req/Set]LatLonAlt, 6E, (<8,float64,lat,Lat>,<8,float64,lon,Lon>,<8,float64,alt,Alt>)
+mid, LatLonAlt, 6F, (<8,float64,lat,Lat>,<8,float64,lon,Lon>,<8,float64,alt,Alt>)
+mid, [Req/Set]Heading, 82, <4,float32,heading,Heading>
+mid, Heading, 83, <4,float32,heading,Heading>
+mid, [Req/Set]LocationID, 84, <2,uint16,locid,LocationID>
+mid, LocationID, 85, <2,uint16,locid,LocationID>
+mid, [Req/Set]ExtOutputMode, 86, <2,hex16,extOutputmode,ExtOutputMode>
+mid, ExtOutputMode, 87, <2,hex16,extOutputmode,ExtOutputMode>
+mid, StoreFilterState, 8A, <0,null,null,>
+mid, StoreFilterStateAck, 8B, <0,null,null,>
+mid, [Req/Set]PortConfig, 8C, {(<1,uint8,reserved,reserved>,<1,protocol,protocol,protocol>,<1,bits8,flags,flags>,<1,baudrate,baudrate,baudrate>)}
+mid, PortConfig, 8D, {(<1,uint8,reserved,reserved>,<1,protocol,protocol,protocol>,<1,bits8,flags,flags>,<1,baudrate,baudrate,baudrate>)}
+mid, [Req/Set]StringOutputType, 8E, <2,hex16,type,StringOutputType>
+mid, StringOutputType, 8F, <2,hex16,type,StringOutputType>
+mid, ReqEMTS, 90,
+mid, EMTSData, 91,
+mid, RestoreEMTS, 94,
+mid, RestoreEMTSAck, 95,
+mid, StoreEMTS, 96,
+mid, StoreEMTSAck, 97,
+mid, ResetOrientation, A4, <2,bits16,code,Code>
+mid, ResetOrientationAck, A5, <0,null,null,>
+mid, ReqGPSStatus, A6, <0,null,null,>
+mid, GPSStatus, A7,
+mid, ReqManufacturerId, AA, <0,null,null,>
+mid, ManufacturerId, AB, <16,ascii(true),manufacturerid,ManufacturerId>
+mid, ReqRadioChannel, B6,
+mid, ReqRadioChannelAck, B7, <2,uint16,channel,Channel>
+mid, [Req/Set]OutputConfiguration, C0, {(<2,xdi,xdi1,XDI>,<2,uint16,freq,Freq>)}
+mid, OutputConfiguration, C1, {(<2,xdi,xdi1,XDI>,<2,uint16,freq,Freq>)}
+mid, [Req/Set]ErrorMode, DA, <2,uint16,errormode,ErrorMode>
+mid, ErrorMode, DB, <2,uint16,errormode,ErrorMode>
+mid, [Req/Set]TransmitDelay, DC, <2,uint16,ticks,Ticks>
+mid, TransmitDelay, DD, <2,uint16,ticks,Ticks>
+mid, [Req/Set]ObjectAlignment, E0, (<4,float32,a,r1c1>,<4,float32,b,r1c2>,<4,float32,c,r1c3>,<4,float32,d,r2c1>,<4,float32,e,r2c2>,<4,float32,f,r2c3>,<4,float32,g,r3c1>,<4,float32,h,r3c2>,<4,float32,i,r3c3>)
+mid, ObjectAlignment, E1, (<4,float32,a,r1c1>,<4,float32,b,r1c2>,<4,float32,c,r1c3>,<4,float32,d,r2c1>,<4,float32,e,r2c2>,<4,float32,f,r2c3>,<4,float32,g,r3c1>,<4,float32,h,r3c2>,<4,float32,i,r3c3>)
+mid, [Req/Set]CanConfig, E6, (<2,uint16,reserved,Reserved>,<1,bits8,flags,Flags>,<1,canbaudrate,canbaudrate,CanBaudRate>)
+mid, CanConfig, E7, (<2,uint16,reserved,Reserved>,<1,bits8,flags,Flags>,<1,canbaudrate,canbaudrate,CanBaudRate>)
+mid, [Req/Set]CanOutputConfig, E8, {(<1,xsenscandataidentifier,xsenscandataidentifier,XsensCanDataIdentifier>,<1,uint8,length,Length>,<4,uint32,idmask,Id>,<2,uint16,outfreq,OutFreq>)}
+mid, CanOutputConfig, E9, {(<1,xsenscandataidentifier,xsenscandataidentifier,XsensCanDataIdentifier>,<1,uint8,length,Length>,<4,uint32,idmask,Id>,<2,uint16,outfreq,OutFreq>)}
+mid, [Req/Set]AlignmentRotation, EC, (<1,alignmentframe,frame,Frame>,<4,float32,q0,q0>,<4,float32,q1,q1>,<4,float32,q2,q2>,<4,float32,q3,q3>)
+mid, AlignmentRotation, ED, (<1,alignmentframe,frame,Frame>,<4,float32,q0,q0>,<4,float32,q1,q1>,<4,float32,q2,q2>,<4,float32,q3,q3>)
+mid, [Req/Set]OptionFlags, 48, (<4,hex32,setflags,setFlags>,<4,hex32,clearflags,clearFlags>)
+mid, [Set/Req]OptionFlags, 49, <4,hex32,optionflags,optionsFlags>
+mid, IccCommand, 74, <1,icccommand,command,Command>
+mid, IccCommandAck, 75, (<1,icccommand,command,Command>,<1,float32,ddtaccuracy,ddtAccuracy>,<1,uint8,dimension,Dimension>,<1,bits8,status,Status>)
+mid, ReqIccStatus, 80,
+mid, IccStatus, 81, (<1,bits8,status,Status>,<1,float32,DDT,DDT>,<1,float32,ddtaccuracy,ddtAccuracy>,<1,uint8,dimension,Dimension>)
+mid, [Req/Set]GnssPlatform, 76, <2,gnssplatform,gnssplatform,GnssPlatform>
+mid, [Set/Req]GnssPlatform, 77, <2,gnssplatform,gnssplatform,GnssPlatform>
+mid, ReqHardwareVersion, 1E,
+mid, HardwareVersion, 1F, <2,uint16,version,Version>
+mid, ReqDeviceCapabilities, 52,
+mid, DeviceCapabilities, 53, <4,bits32,flags, Flags>
+mid, SetGnssReceiver, AC, (<2,gnssreceiver,gnssreceiver,GnssReceiver>,<1,uint8,reserved,reserved>,<1,baudrate,baudrate,baudrate>,<2,uint16,intputrate,InputRate>,<4,uint32,receiverOptions,ReceiverOptions>)
+mid, GnssReceiver, AD, (<2,gnssreceiver,gnssreceiver,GnssReceiver>,<1,uint8,reserved,reserved>,<1,baudrate,baudrate,baudrate>,<2,uint16,intputrate,InputRate>,<4,uint32,receiverOptions,ReceiverOptions>)
+mid, SetInitialHeading, D6, <4,float32,heading,Heading>
+mid, SetInitialHeadingAck, D7, <0,null,null,>
+mid, ForwardGnssData, E2, (<1,hex8,preamble,Preamble>,<2,uint16,size1,Size>,<size1,rtcm3,data1,Data>,<3,hex32,crc,CRC>)
+mid, ForwardGnssDataAck, E3,
+
+% baudrates
+% ---------------
+baudrate, 4000k, 0D,
+baudrate, 3500k, 0E,
+baudrate, 2000k, 0C,
+baudrate, 921k6, 0A,
+baudrate, 921k6Legacy, 80,
+baudrate, 460k8, 0,
+baudrate, 230k4, 1,
+baudrate, 115k2, 2,
+baudrate, 76k6, 3,
+baudrate, 57k6, 4,
+baudrate, 38k4, 5,
+baudrate, 28k8, 6,
+baudrate, 19k2, 7,
+baudrate, 14k4, 8,
+baudrate, 9k6, 9,
+baudrate, 4k8, 0B,
+
+% can baudrates
+% ---------------
+canbaudrate, 1M, 0c,
+canbaudrate, 800k, 0b,
+canbaudrate, 500k, 0a,
+canbaudrate, 250k, 00,
+canbaudrate, 125k, 01,
+canbaudrate, 100k, 02,
+canbaudrate, 83k3, 03,
+canbaudrate, 62k5, 04,
+canbaudrate, 50k, 05,
+canbaudrate, 33k3, 06,
+canbaudrate, 20k, 07,
+canbaudrate, 10k, 08,
+canbaudrate, 5k, 09,
+
+% xsens can data identifiers
+% ---------------
+xsenscandataidentifier, Error, 01,
+xsenscandataidentifier, SampleTime, 05,
+xsenscandataidentifier, GroupCounter, 06,
+xsenscandataidentifier, UtcTime, 07,
+xsenscandataidentifier, StatusWord, 11,
+xsenscandataidentifier, Quaternion, 21,
+xsenscandataidentifier, EulerAngles, 22,
+xsenscandataidentifier, DeltaV, 31,
+xsenscandataidentifier, RateOfTurn, 32,
+xsenscandataidentifier, DeltaQ, 33,
+xsenscandataidentifier, Acceleration, 34,
+xsenscandataidentifier, FreeAcceleration, 35,
+xsenscandataidentifier, MagneticField, 41,
+xsenscandataidentifier, Temperature, 51,
+xsenscandataidentifier, BaroPressure, 52,
+xsenscandataidentifier, RateOfTurnHR, 61,
+xsenscandataidentifier, AccelerationHR, 62,
+xsenscandataidentifier, LatLong, 71,
+xsenscandataidentifier, AltitudeEllipsoid, 72,
+xsenscandataidentifier, PositionEcef_X, 73,
+xsenscandataidentifier, PositionEcef_Y, 74,
+xsenscandataidentifier, PositionEcef_Z, 75,
+xsenscandataidentifier, Velocity, 76,
+
+% event / action table
+% ---------------
+synceventaction, ResetTimer, 2,
+synceventaction, TriggerIndication, 3,
+synceventaction, IntervalTransitionMeasurement, 4,
+synceventaction, SampleAndSend, 7,
+synceventaction, SendLatest, 8,
+synceventaction, ClockBiasEstimation, 9,
+synceventaction, StartSampling, B,
+synceventaction, 1PpsTimePulse, E,
+
+% sync line table
+% ---------------
+syncline, In1, 2,
+syncline, Bi1In, 3,
+syncline, ClockIn, 0,
+syncline, GnssClockIn, 1,
+syncline, Bi1Out, 4,
+syncline, ReqData, 6,
+syncline, Out, 7,
+syncline, Gnss1Pps, 8,
+syncline, In2, 9,
+
+% alignment frame table
+% ---------------
+alignmentframe, Sensor, 0
+alignmentframe, Local, 1
+
+%errors
+% ---------------
+error, No error, 0,
+error, No bus, 1,
+error, Bus not ready, 2,
+error, Invalid period, 3,
+error, Invalid message, 4,
+error, Init bus failed 1, 10,
+error, Init bus failed 2, 11,
+error, Init bus failed 3, 12,
+error, Set bus ID failed 1, 14,
+error, Set bus ID failed 2, 15,
+error, Measurement failed 1, 18,
+error, Measurement failed 2, 19,
+error, Measurement failed 3, 1A,
+error, Measurement failed 4, 1B,
+error, Measurement failed 5, 1C,
+error, Measurement failed 6, 1D,
+error, Timer overflow, 1E,
+error, Invalid baudrate, 20,
+error, Invalid parameter, 21,
+error, Measurement failed 7, 23,
+error, Measurement failed 8, 24,
+error, Wireless failed, 25,
+error, Device error, 28,
+error, Data overflow, 29,
+error, Buffer overflow, 2A,
+error, External trigger error, 2B,
+error, Samplestream error, 2C,
+error, Power dip, 2D,
+error, Power overcurrent, 2E,
+error, Overheating, 2F,
+error, Battery low, 30,
+error, Invalid filter profile, 31,
+error, Invalid stored settings, 32,
+error, Access denied, 33,
+error, File error, 34,
+error, Output config error, 35,
+
+%icc commands
+%----------------
+icccommand, Start Representative Motion, 0,
+icccommand, Stop Representative Motion, 1,
+icccommand, Store ICC results, 2,
+icccommand, Representative Motion State, 3,
+
+% gnssplatforms
+% ---------------
+gnssplatform, Portable, 00 00,
+gnssplatform, Stationary, 00 02,
+gnssplatform, Pedestrian, 00 03,
+gnssplatform, Automotive, 00 04,
+gnssplatform, Sea, 00 05,
+gnssplatform, Airborne less than 1g, 00 06,
+gnssplatform, Airborne less than 2g, 00 07,
+gnssplatform, Airborne less than 4g, 00 08,
+gnssplatform, Wrist worn watch, 00 09,
+
+% gnssreceivers
+% ---------------
+gnssreceiver, uBlox Max M8Q, 00 00,
+gnssreceiver, Generic NMEA, 00 01,
+gnssreceiver, uBlox Neo M8P, 00 02,
+gnssreceiver, uBlox Zed F9P, 00 03,
+gnssreceiver, Septentrio Mosaic X5, 00 04,
+gnssreceiver, Trimble BX992, 00 05,
+
+% nmeatalkerids
+% ---------------
+nmeatalkerid, GL, 00
+nmeatalkerid, GN, 01
+nmeatalkerid, GP, 02
+
+% protocols
+% ---------------
+protocol, Xbus, 01,
+protocol, Xbus command only, 02,
+protocol, Xbus data only, 03,
+protocol, Text mode NMEA only, 05,
+protocol, RTCM, 06,
