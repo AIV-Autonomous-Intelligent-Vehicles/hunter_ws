@@ -1,4 +1,4 @@
-# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+# YOLOv5 �� by Ultralytics, GPL-3.0 license
 """
 PyTorch utils
 """
@@ -103,11 +103,15 @@ def device_count():
     except Exception:
         return 0
 
-# def select_device(device='', batch_size=0, newline=True): # if select cuda
-def select_device(device='cpu', batch_size=0, newline=True):
+
+def select_device(device='auto', batch_size=0, newline=True): # if select cuda
     
     # device = None or 'cpu' or 0 or '0' or '0,1,2,3'
-    s = f'YOLOv5 🚀 {git_describe() or file_date()} Python-{platform.python_version()} torch-{torch.__version__} '
+    s = f'YOLOv5 �� {git_describe() or file_date()} Python-{platform.python_version()} torch-{torch.__version__} '
+    
+    if device == 'auto':
+        device = '0' if torch.cuda.is_available() else 'cpu'
+
     device = str(device).strip().lower().replace('cuda:', '').replace('none', '')  # to string, 'cuda:0' to '0'
     cpu = device == 'cpu'
     mps = device == 'mps'  # Apple Metal Performance Shaders (MPS)
