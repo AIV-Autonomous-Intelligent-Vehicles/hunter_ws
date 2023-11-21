@@ -64,6 +64,7 @@ while true % ctrl + c to stop
             bboxData_r = call(client, request_r);
             bboxData_l = call(client, request_l);
             
+            % 콘 검출
             [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r, ...
                 cameraParams,tformCamera_l,tformCamera_r,clusterThreshold);
             
