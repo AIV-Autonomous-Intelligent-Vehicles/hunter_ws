@@ -23,24 +23,29 @@ markerIdPath = 0;
 markerIdClusters = 0;
 params = lidarParameters('OS1Gen1-64',512);
 
-lidarSub = rossubscriber('/lidar/points', "DataFormat", "struct");
-%detect_sub_l = rossubscriber('yolov5/cob_detections_l', 'cob_perception_msgs/DetectionArray');
-%detect_sub_r = rossubscriber('yolov5/cob_detections_r', 'cob_perception_msgs/DetectionArray');
+% Ouster 64ch sub
+lidarSub = rossubscriber('/os1_cloud_node/points',"DataFormat","struct"); 
+% Cone visualization for Rviz
 [pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
+% Path visualization for Rviz
 pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
-modelStatesSub = rossubscriber('/gazebo/model_states');
+% Gps sub
+gpsSub = rossubscriber("/ublox_gps/fix","sensor_msgs/NavSatFix","DataFormat","struct");
+% imu sub
+imuSub = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
+% Yolo Client
 client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects',DataFormat='struct');
 request_l = rosmessage(client);
 request_l.ObjectName.Data = 'left';
 request_r = rosmessage(client);
 request_r.ObjectName.Data = 'right';
 
-load("camera1.mat");
-camera1_tform = tform;
-tformCamera1 = invert(camera1_tform);
+load("camera1.mat"); 
+tform_l = tform;
+tformCamera_l = invert(tform_l);
 load("camera2.mat");
-camera2_tform = tform;
-tformCamera2 = invert(camera2_tform);
+tform_r = tform;
+tformCamera_r = invert(tform_r);
 load("cameraParams.mat")
 
 figure;
@@ -48,7 +53,8 @@ figure;
 while true % ctrl + c to stop
     tic;
     
-    vehiclePose = updateVehiclePose(modelStatesSub, tftree);
+    vehiclePose = getVehiclePose(modelStatesSub); % get pose data from gps, imu
+    broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
 
     if isempty(pp.Waypoints) || norm(worldWaypoints(end,:)-[vehiclePose(1), vehiclePose(2)]) < waypointTreshold  % Considering only x and y for the distance
         disp("Make new waypoints");
@@ -58,55 +64,56 @@ while true % ctrl + c to stop
             bboxData_r = call(client, request_r);
             bboxData_l = call(client, request_l);
 
+            % 지면제거, roi설정, 노이즈 제거
             roiPtCloud = preprocess_lidar_data(lidarData, params, roi);
             
+            % bboxData에서 y_cone, r_cone 추출
             [y_coneBboxs_l, b_coneBboxs_l] = extractConesBboxs(bboxData_l.ObjectList);
             [y_coneBboxs_r, b_coneBboxs_r] = extractConesBboxs(bboxData_r.ObjectList);
             
-            [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams,tformCamera2,'ClusterThreshold',clusterThreshold);
-            [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams,tformCamera1,'ClusterThreshold',clusterThreshold);
-
+            % Bbox 속 pt 클러스터링
+            [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams,tformCamera_l,'ClusterThreshold',clusterThreshold);
+            [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams,tformCamera_r,'ClusterThreshold',clusterThreshold);
+            
+            % 검출된 콘 중 y_cone, b_cone 분류
             [y_coneBboxesLidar_l, b_coneBboxesLidar_l] = splitConesBboxes(y_coneBboxs_l,bboxesLidar_l,boxesUsed_l);
             [y_coneBboxesLidar_r, b_coneBboxesLidar_r] = splitConesBboxes(y_coneBboxs_r,bboxesLidar_r,boxesUsed_r);
             
+            % 임계치 이상의 부피를 가진 Cuboid Box의 중심점 추출
             innerConePosition = extractConePositions(cuboidTreshold, b_coneBboxesLidar_l, b_coneBboxesLidar_r);
             outerConePosition = extractConePositions(cuboidTreshold, y_coneBboxesLidar_l, y_coneBboxesLidar_r);
-
+            
+            % 중복점 제거, 정렬
             innerConePosition = unique_rows(innerConePosition);
             outerConePosition = unique_rows(outerConePosition);
 
+            % y, b콘 개수 맞추기 (적은 콘 기준)
+            [innerConePosition, outerConePosition] = match_array_lengths(innerConePosition, outerConePosition);
+            
+            % 검출된 콘 시각화
             hold off;
             scatter(innerConePosition(:,1),innerConePosition(:,2),'blue');
             hold on;
             scatter(outerConePosition(:,1),outerConePosition(:,2),'red');
-
-            [innerConePosition, outerConePosition] = match_array_lengths(innerConePosition, outerConePosition);
-            waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
-
-            worldWaypoints = transformWaypointsToOdom(waypoints, vehiclePose);
             
-
+            % 경로 생성
+            waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
+            
+            % waypoint 차량 좌표계에서 월드 좌표계로 변환
+            worldWaypoints = transformWaypointsToWorld(waypoints, vehiclePose);
+            
+            % 경로, 콘 시각화 Rviz
             [markerArrayMsg, markerIdClusters] = generate_clusters_marker(innerConePosition, outerConePosition, 'base_footprint', markerIdClusters);
             send(pubClusters, markerArrayMsg);
-
             [pathMarkerMsg, markerIdPath] = generate_path_marker(worldWaypoints, 'hunter2_base', markerIdPath);
             send(pubPath, pathMarkerMsg);
      
             pp.Waypoints = worldWaypoints;
+
         catch
             disp("Fail to make new waypoints");
-            % For check the exact clustering box//========================
-            %pcshow(roiPtCloud);
-            %xlim([0 10])
-            %ylim([-5 5])
-    
-            %hold on;
-            %showShape('cuboid',y_coneBboxesLidar_r,'Opacity',0.5,'Color','green');
-            %showShape('cuboid',b_coneBboxesLidar_r,'Opacity',0.5,'Color','red');
-            %showShape('cuboid',y_coneBboxesLidar_l,'Opacity',0.5,'Color','blue');
-            %showShape('cuboid',b_coneBboxesLidar_l,'Opacity',0.5,'Color','red');
-            %return;
             continue; % 다음 while문 반복으로 넘어감
+            
         end
     end
 
@@ -119,82 +126,50 @@ end
 
 
 %%
-function vehiclePose = updateVehiclePose(modelStatesSub, tftree)
-    %vehiclePoseOdom = getVehiclePose(tftree, 'ackermann_steering_controller/odom', 'base_footprint');
-    %vehiclePose = vehiclePoseOdom;
 
-    modelStatesMsg = receive(modelStatesSub);
-    robotIndex = find(strcmp(modelStatesMsg.Name, 'hunter2_base'));  
-    robotPose = modelStatesMsg.Pose(robotIndex);
-    quat = [robotPose.Orientation.W, robotPose.Orientation.X, robotPose.Orientation.Y, robotPose.Orientation.Z];
+
+function vehiclePose = getVehiclePose(gpsSub, imuSub)
+    gpsMsg = receive(gpsSub);
+    imuMsg = receive(imuSub);
+    quat = [imuMsg.Orientation.W,imuMsg.Orientation.X,imuMsg.Orientation.Y,imuMsg.Orientation.Z];
     euler = quat2eul(quat);
-    yaw = euler(1);
-    vehiclePoseGT=[robotPose.Position.X; robotPose.Position.Y; yaw];
+    % UTM 좌표계로 변환 (Korea: 32652)
+    [x_utm, y_utm] = projfwd(projcrs(32652), gpsMsg.latitude, gpsMsg.longitude);
 
+    vehiclePose = [x_utm, y_utm, euler(1)];
+end
+
+function broadcastTftree(vehiclePose,tftree)
     % TF 메시지 생성 및 설정
     tfStampedMsg = rosmessage('geometry_msgs/TransformStamped');
     tfStampedMsg.ChildFrameId = 'base_link';
     tfStampedMsg.Header.FrameId = 'hunter2_base';
     tfStampedMsg.Header.Stamp = rostime('now');
-    tfStampedMsg.Transform.Translation.X = vehiclePoseGT(1);
-    tfStampedMsg.Transform.Translation.Y = vehiclePoseGT(2);
-    tfStampedMsg.Transform.Rotation.Z = sin(vehiclePoseGT(3)/2);
-    tfStampedMsg.Transform.Rotation.W = cos(vehiclePoseGT(3)/2);
+    tfStampedMsg.Transform.Translation.X = vehiclePose(1);
+    tfStampedMsg.Transform.Translation.Y = vehiclePose(2);
+    tfStampedMsg.Transform.Rotation.Z = sin(vehiclePose(3)/2);
+    tfStampedMsg.Transform.Rotation.W = cos(vehiclePose(3)/2);
 
-    % TF 브로드캐스팅
     sendTransform(tftree, tfStampedMsg);
-
-    vehiclePose = vehiclePoseGT;
-
 end
 
+function roiPtCloud = preprocess_lidar_data(lidarData, params, roi)
+    xyzData = rosReadXYZ(lidarData);
+    ptCloud = pointCloud(xyzData);
 
-function conePosition = extractConePositions(cuboidTreshold, coneBboxesLidar_l, coneBboxesLidar_r)
-    % Extract xlen, ylen, zlen from the bounding boxes
-    volumes_l = prod(coneBboxesLidar_l(:, 4:6), 2);
-    volumes_r = prod(coneBboxesLidar_r(:, 4:6), 2);
+    ptCloudOrg = pcorganize(ptCloud, params); 
 
-    % Find indices where volumes are smaller than cuboidThreshold
-    indices_l = volumes_l > cuboidTreshold;
-    indices_r = volumes_r > cuboidTreshold;
+    groundPtsIdx = segmentGroundFromLidarData(ptCloudOrg);
+    nonGroundPtCloud = select(ptCloudOrg, ~groundPtsIdx, 'OutputSize', 'full'); % 지면제거
 
-    % Combine the inner cone positions from left and right into a single array
-    conePosition = [coneBboxesLidar_l(indices_l, 1:2);coneBboxesLidar_r(indices_r, 1:2)];
-end
+    indices = findPointsInROI(nonGroundPtCloud, roi);
+    roiPtCloud = select(nonGroundPtCloud, indices); % roi 
 
-function [y_coneBboxesLidar, b_coneBboxesLidar] = splitConesBboxes(y_coneBboxs,bboxesLidar,boxesUsed)
-    % y_cone의 개수만 계산
-    numY_cone = sum(boxesUsed(1:size(y_coneBboxs,1)));
-    
-    % bboxesLidar에서 y_cone와 b_cone의 bbox 분류
-    y_coneBboxesLidar = bboxesLidar(1:numY_cone, :);
-    b_coneBboxesLidar = bboxesLidar(numY_cone+1:end, :);
-end
-
-
-
-function odomWaypoints = transformWaypointsToOdom(waypoints, vehiclePoseInOdom)
-    % Initialize transformed waypoints
-    odomWaypoints = zeros(size(waypoints));
-
-    % Extract the vehicle's yaw angle
-    theta = vehiclePoseInOdom(3);
-
-    % Create the 2D rotation matrix
-    R = [cos(theta), -sin(theta);
-         sin(theta), cos(theta)];
-
-    % Transform each waypoint
-    for i = 1:size(waypoints,1)
-        % Rotate the waypoint considering the vehicle's yaw
-        rotatedPoint = R * waypoints(i,:)';
-
-        % Translate considering the vehicle's position in the odom frame
-        odomWaypoints(i,:) = rotatedPoint' + vehiclePoseInOdom(1:2)';
-    end
+    roiPtCloud = pcdenoise(roiPtCloud, 'PreserveStructure', true); % 노이즈 제거
 end
 
 function [y_coneBboxs, b_coneBboxs] = extractConesBboxs(bboxData)
+    % 수신한 Bbox 데이터에서 y_cone, b_cone 분리
     % BoundingBoxes_ 대신 Detections의 길이로 메모리 공간을 미리 할당
     numBboxes = numel(bboxData.Detections);
 
@@ -228,83 +203,26 @@ function [y_coneBboxs, b_coneBboxs] = extractConesBboxs(bboxData)
     b_coneBboxs = temp_b_coneBboxs(1:b_count, :);
 end
 
-function vehiclePose = getVehiclePose(tree, sourceFrame, targetFrame)
-    % This function returns the pose of the vehicle in the odom frame.
-
-    % Check if the frames are available in the tree
-    if ~any(strcmp(tree.AvailableFrames, sourceFrame))
-        error('Source frame is not available in the tree');
-    end
-    if ~any(strcmp(tree.AvailableFrames, targetFrame))
-        error('Target frame is not available in the tree');
-    end
-
-    % Wait for the transformation to be available
-    waitForTransform(tree, sourceFrame, targetFrame); 
-
-    % Get the transformation
-    tf = getTransform(tree, sourceFrame, targetFrame);
-
-    % Extract the vehicle's pose
-    trans = [tf.Transform.Translation.X;
-             tf.Transform.Translation.Y];
-
-    quat = [tf.Transform.Rotation.W;
-            tf.Transform.Rotation.X;
-            tf.Transform.Rotation.Y;
-            tf.Transform.Rotation.Z];
-
-    eul = quat2eul(quat');  % Get the euler angles in ZYX order (yaw, pitch, roll)
-
-    vehiclePose = [trans; eul(1)];  % Vehicle's pose in [x, y, theta(yaw)]
+function [y_coneBboxesLidar, b_coneBboxesLidar] = splitConesBboxes(y_coneBboxs,bboxesLidar,boxesUsed)
+    % y_cone의 개수만 계산
+    numY_cone = sum(boxesUsed(1:size(y_coneBboxs,1)));
+    
+    % bboxesLidar에서 y_cone와 b_cone의 bbox 분류
+    y_coneBboxesLidar = bboxesLidar(1:numY_cone, :);
+    b_coneBboxesLidar = bboxesLidar(numY_cone+1:end, :);
 end
 
+function conePosition = extractConePositions(cuboidTreshold, coneBboxesLidar_l, coneBboxesLidar_r)
+    % Extract xlen, ylen, zlen from the bounding boxes
+    volumes_l = prod(coneBboxesLidar_l(:, 4:6), 2);
+    volumes_r = prod(coneBboxesLidar_r(:, 4:6), 2);
 
+    % Find indices where volumes are smaller than cuboidThreshold
+    indices_l = volumes_l > cuboidTreshold;
+    indices_r = volumes_r > cuboidTreshold;
 
-
-function roiPtCloud = preprocess_lidar_data(lidarData, params, roi)
-    xyzData = rosReadXYZ(lidarData);
-    ptCloud = pointCloud(xyzData);
-
-    ptCloudOrg = pcorganize(ptCloud, params);
-
-    groundPtsIdx = segmentGroundFromLidarData(ptCloudOrg);
-    nonGroundPtCloud = select(ptCloudOrg, ~groundPtsIdx, 'OutputSize', 'full');
-
-    indices = findPointsInROI(nonGroundPtCloud, roi);
-    roiPtCloud = select(nonGroundPtCloud, indices);
-
-    roiPtCloud = pcdenoise(roiPtCloud, 'PreserveStructure', true);
-end
-
-function [centers, innerConePosition, outerConePosition] = process_clusters(roiPtCloud)
-    [labels, numClusters] = pcsegdist(roiPtCloud, 0.3);
-
-    xData = roiPtCloud.Location(:,1);
-    yData = roiPtCloud.Location(:,2);
-
-    clf;
-    hold on;
-    centers = [];
-    innerConePosition = [];
-    outerConePosition = [];
-    for i = 1:numClusters
-        idx = labels == i;
-        clusterPoints = [xData(idx), yData(idx), roiPtCloud.Location(idx,3)];
-
-        if size(clusterPoints, 1) >= 20
-            [~, maxZIdx] = max(clusterPoints(:,3));
-            center = clusterPoints(maxZIdx, 1:2);
-            centers = [centers; center];
-
-            if center(2)<0
-                innerConePosition=[innerConePosition; center(1), center(2)];
-            else
-                outerConePosition=[outerConePosition; center(1), center(2)];
-            end
-            scatter(center(1), -center(2), "red","filled");
-        end
-    end
+    % Combine the inner cone positions from left and right into a single array
+    conePosition = [coneBboxesLidar_l(indices_l, 1:2);coneBboxesLidar_r(indices_r, 1:2)];
 end
 
 function uniqueArray = unique_rows(array)
@@ -396,38 +314,26 @@ function waypoints = generate_waypoints_del(innerConePosition, outerConePosition
     %waypoints=[xp', yp'];
 end
 
-function waypoints = generate_waypoints(innerConePosition, outerConePosition)
-	%go_traingulation
-    
-    [m,nc] = size(innerConePosition); % size of the inner/outer cone positions data
-    kockle_coords = zeros(2*m,nc); % initiate a P matrix consisting of inner and outer coordinates
-    kockle_coords(1:2:2*m,:) = innerConePosition;
-    kockle_coords(2:2:2*m,:) = outerConePosition;
-    xp=[];
-    yp=[];
 
-    midpoints=zeros(size(kockle_coords, 1)-1 , size(kockle_coords,2));
+function odomWaypoints = transformWaypointsToWorld(waypoints, vehiclePose)
+    % Initialize transformed waypoints
+    odomWaypoints = zeros(size(waypoints));
 
-    for i=1:size(kockle_coords, 1) -1
-        midpoints(i,1)=(kockle_coords(i,1)+kockle_coords(i+1,1)) /2;
-        midpoints(i,2)=(kockle_coords(i,2)+kockle_coords(i+1,2)) /2;
+    % Extract the vehicle's yaw angle
+    theta = vehiclePose(3);
+
+    % Create the 2D rotation matrix
+    R = [cos(theta), -sin(theta);
+         sin(theta), cos(theta)];
+
+    % Transform each waypoint
+    for i = 1:size(waypoints,1)
+        % Rotate the waypoint considering the vehicle's yaw
+        rotatedPoint = R * waypoints(i,:)';
+
+        % Translate considering the vehicle's position in the odom frame
+        odomWaypoints(i,:) = rotatedPoint' + vehiclePose(1:2)';
     end
-    waypoints = midpoints;
-    
-    % distancematrix = squareform(pdist(midpoints));
-    % distancesteps = zeros(length(midpoints)-1,1);
-    % for j = 2:length(midpoints)
-    %     distancesteps(j-1,1) = distancematrix(j,j-1);
-    % end
-    % totalDistance = sum(distancesteps); % total distance travelled
-    % distbp = cumsum([0; distancesteps]); % distance for each waypoint
-    % gradbp = linspace(0,totalDistance,100);
-    % xq = interp1(distbp,midpoints(:,1),gradbp,'spline'); % interpolate x coordinates
-    % yq = interp1(distbp,midpoints(:,2),gradbp,'spline'); % interpolate y coordinates
-    % xp = [xp xq]; % store obtained x midpoints after each iteration
-    % yp = [yp yq]; % store obtained y midpoints after each iteration
-    % 
-    % waypoints=[xp', yp'];
 end
 
 function [markerArrayMsg, markerID] = generate_clusters_marker(b_coneCluster, y_coneCluster, frameId, markerID)
@@ -463,7 +369,6 @@ function [markerArrayMsg, markerID] = generate_clusters_marker(b_coneCluster, y_
     end
 end
 
-
 function [markerMsg, markerID] = generate_path_marker(waypoints, frameId, markerID)
     markerMsg = rosmessage('visualization_msgs/Marker','DataFormat','struct');
     markerMsg.Header.FrameId = frameId;
@@ -487,8 +392,6 @@ function [markerMsg, markerID] = generate_path_marker(waypoints, frameId, marker
         markerMsg.Points(i) = point;
     end
 end
-
-
 
 function [pub, msg] = publish_twist_command(v, w, topicName)
     pub = rospublisher(topicName, 'geometry_msgs/Twist','DataFormat','struct');
