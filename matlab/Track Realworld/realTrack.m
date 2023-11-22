@@ -20,6 +20,7 @@ pp.MaxAngularVelocity = 2.0; % rad/s
 LidarCam = true;
 GpsImu = true;
 
+
 % init//==================================================================
 waypoints = [];
 markerIdPath = 0;
@@ -28,7 +29,7 @@ params = lidarParameters('OS1Gen1-64',512);
 
 if LidarCam
     % Ouster 64ch sub
-    lidarSub = rossubscriber('/os1_cloud_node/points',"DataFormat","struct");
+    sub.Lidar = rossubscriber('/os1_cloud_node/points',"DataFormat","struct");
     % Yolo Client
     client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects',DataFormat='struct');
     request_l = rosmessage(client);
@@ -45,15 +46,17 @@ if LidarCam
 end
 if GpsImu
     % Gps sub
-    gpsSub = rossubscriber("/ublox_gps/fix","sensor_msgs/NavSatFix","DataFormat","struct");
+    sub.Gps = rossubscriber("/ublox_gps/fix","sensor_msgs/NavSatFix","DataFormat","struct");
     % imu sub
-    imuSub = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
+    sub.Imu = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
 end
 
+% Publish Command
+pub.Cmd = rospublisher('/cmd_vel', 'geometry_msgs/Twist','DataFormat','struct');
 % Cone visualization for Rviz
-[pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
+[pub.Clusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
 % Path visualization for Rviz
-pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
+pub.Path = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
 
 
 
@@ -65,7 +68,7 @@ while true % ctrl + c to stop
     tic;
     
     if GpsImu
-        vehiclePose = getVehiclePose(modelStatesSub); % get pose data from gps, imu
+        vehiclePose = getVehiclePose(sub); % get pose data from gps, imu
         broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
         worldFrame = 'hunter_world';
     else
@@ -78,7 +81,7 @@ while true % ctrl + c to stop
         
         try
             if LidarCam
-                lidarData = receive(lidarSub);
+                lidarData = receive(sub.Lidar);
                 bboxData_r = call(client, request_r);
                 bboxData_l = call(client, request_l);
             
@@ -89,24 +92,24 @@ while true % ctrl + c to stop
                 [innerConePosition, outerConePosition] = Right();
             end
 
-            % 검출된 콘 시각화
-            hold off;
-            scatter(innerConePosition(:,1),innerConePosition(:,2),'blue');
-            hold on;
-            scatter(outerConePosition(:,1),outerConePosition(:,2),'red');
-            
             % 경로 생성
             waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
             
             % waypoint 차량 좌표계에서 월드 좌표계로 변환
             worldWaypoints = transformWaypointsToWorld(waypoints, vehiclePose);
             
+
+            % 검출된 콘 시각화
+            hold off;
+            scatter(innerConePosition(:,1),innerConePosition(:,2),'blue');
+            hold on;
+            scatter(outerConePosition(:,1),outerConePosition(:,2),'red');
+            
             % 경로, 콘 시각화 Rviz
             [markerArrayMsg, markerIdClusters] = generate_clusters_marker(innerConePosition, outerConePosition, 'base_link', markerIdClusters);
-            send(pubClusters, markerArrayMsg);
+            send(pub.Clusters, markerArrayMsg);
             [pathMarkerMsg, markerIdPath] = generate_path_marker(worldWaypoints, worldFrame, markerIdPath);
-            
-            send(pubPath, pathMarkerMsg);
+            send(pub.Path, pathMarkerMsg);
      
             pp.Waypoints = worldWaypoints;
 
@@ -118,8 +121,8 @@ while true % ctrl + c to stop
     end
 
     [v, w] = pp(vehiclePose);  % Pass the current vehicle pose to the path planner
-    [pub, msg] = publish_twist_command(v, w, '/cmd_vel');
-    send(pub, msg);
+    cmdMsg = publish_twist_command(v, w, pub.Cmd);
+    send(pub.Cmd, cmdMsg);
     toc;
 end
 
@@ -128,9 +131,9 @@ end
 %%
 
 
-function vehiclePose = getVehiclePose(gpsSub, imuSub)
-    gpsMsg = receive(gpsSub);
-    imuMsg = receive(imuSub);
+function vehiclePose = getVehiclePose(sub)
+    gpsMsg = receive(sub.Gps);
+    imuMsg = receive(sub.Imu);
     quat = [imuMsg.Orientation.W,imuMsg.Orientation.X,imuMsg.Orientation.Y,imuMsg.Orientation.Z];
     euler = quat2eul(quat);
     % UTM 좌표계로 변환 (Korea: 32652)
@@ -330,11 +333,10 @@ function [markerMsg, markerID] = generate_path_marker(waypoints, frameId, marker
     end
 end
 
-function [pub, msg] = publish_twist_command(v, w, topicName)
-    pub = rospublisher(topicName, 'geometry_msgs/Twist','DataFormat','struct');
-    msg = rosmessage(pub);
-    msg.Linear.X = v;
-    msg.Angular.Z = w;
+function cmdMsg = publish_twist_command(v, w, pub)
+    cmdMsg = rosmessage(pub);
+    cmdMsg.Linear.X = v;
+    cmdMsg.Angular.Z = w;
 end
 
 
