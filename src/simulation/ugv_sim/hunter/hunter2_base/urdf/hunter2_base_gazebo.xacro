@@ -370,7 +370,7 @@
       link="right_rear_link" />
     <axis
       xyz="0 0 -1" />
-     <dynamics damping="0.0" friction="15"/>
+    <dynamics damping="0.0" friction="15"/>
   </joint>
   <link
     name="front_steer_link">
