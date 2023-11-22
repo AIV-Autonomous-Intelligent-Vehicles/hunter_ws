@@ -17,58 +17,77 @@ pp.LookaheadDistance=1.3; % m
 pp.DesiredLinearVelocity=1.5; % m/s
 pp.MaxAngularVelocity = 2.0; % rad/s
 
+LidarCam = true;
+GpsImu = true;
+
 % init//==================================================================
 waypoints = [];
 markerIdPath = 0;
 markerIdClusters = 0;
 params = lidarParameters('OS1Gen1-64',512);
 
-% Ouster 64ch sub
-lidarSub = rossubscriber('/os1_cloud_node/points',"DataFormat","struct"); 
+if LidarCam
+    % Ouster 64ch sub
+    lidarSub = rossubscriber('/os1_cloud_node/points',"DataFormat","struct");
+    % Yolo Client
+    client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects',DataFormat='struct');
+    request_l = rosmessage(client);
+    request_l.ObjectName.Data = 'left';
+    request_r = rosmessage(client);
+    request_r.ObjectName.Data = 'right';
+    load("camera1.mat"); 
+    tform_l = tform;
+    tformCamera_l = invert(tform_l);
+    load("camera2.mat");
+    tform_r = tform;
+    tformCamera_r = invert(tform_r);
+    load("cameraParams.mat")
+end
+if GpsImu
+    % Gps sub
+    gpsSub = rossubscriber("/ublox_gps/fix","sensor_msgs/NavSatFix","DataFormat","struct");
+    % imu sub
+    imuSub = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
+end
+
 % Cone visualization for Rviz
 [pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
 % Path visualization for Rviz
 pubPath = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
-% Gps sub
-gpsSub = rossubscriber("/ublox_gps/fix","sensor_msgs/NavSatFix","DataFormat","struct");
-% imu sub
-imuSub = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
-% Yolo Client
-client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects',DataFormat='struct');
-request_l = rosmessage(client);
-request_l.ObjectName.Data = 'left';
-request_r = rosmessage(client);
-request_r.ObjectName.Data = 'right';
 
-load("camera1.mat"); 
-tform_l = tform;
-tformCamera_l = invert(tform_l);
-load("camera2.mat");
-tform_r = tform;
-tformCamera_r = invert(tform_r);
-load("cameraParams.mat")
+
+
+
 
 figure;
 
 while true % ctrl + c to stop
     tic;
     
-    vehiclePose = getVehiclePose(modelStatesSub); % get pose data from gps, imu
-    broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
+    if GpsImu
+        vehiclePose = getVehiclePose(modelStatesSub); % get pose data from gps, imu
+        broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
+        worldFrame = 'hunter_world';
+    else
+        vehiclePose = getVehiclePose_TF(tftree, 'odom', 'base_link'); % get vehiclePose from Odom
+        worldFrame = 'odom';
+    end
 
     if isempty(pp.Waypoints) || norm(worldWaypoints(end,:)-[vehiclePose(1), vehiclePose(2)]) < waypointTreshold  % Considering only x and y for the distance
         disp("Make new waypoints");
         
         try
-            lidarData = receive(lidarSub);
-            bboxData_r = call(client, request_r);
-            bboxData_l = call(client, request_l);
+            if LidarCam
+                lidarData = receive(lidarSub);
+                bboxData_r = call(client, request_r);
+                bboxData_l = call(client, request_l);
             
-            % 콘 검출
-            [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r, ...
-                cameraParams,tformCamera_l,tformCamera_r,clusterThreshold);
-            
-            %[innerConePosition, outerConePosition] = Straight(vehiclePose);
+                % 콘 검출
+                [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r,cameraParams, ...
+                                                                        tformCamera_l,tformCamera_r,clusterThreshold);
+            else
+                [innerConePosition, outerConePosition] = Right();
+            end
 
             % 검출된 콘 시각화
             hold off;
@@ -83,9 +102,10 @@ while true % ctrl + c to stop
             worldWaypoints = transformWaypointsToWorld(waypoints, vehiclePose);
             
             % 경로, 콘 시각화 Rviz
-            [markerArrayMsg, markerIdClusters] = generate_clusters_marker(innerConePosition, outerConePosition, 'base_footprint', markerIdClusters);
+            [markerArrayMsg, markerIdClusters] = generate_clusters_marker(innerConePosition, outerConePosition, 'base_link', markerIdClusters);
             send(pubClusters, markerArrayMsg);
-            [pathMarkerMsg, markerIdPath] = generate_path_marker(worldWaypoints, 'hunter2_base', markerIdPath);
+            [pathMarkerMsg, markerIdPath] = generate_path_marker(worldWaypoints, worldFrame, markerIdPath);
+            
             send(pubPath, pathMarkerMsg);
      
             pp.Waypoints = worldWaypoints;
@@ -98,7 +118,7 @@ while true % ctrl + c to stop
     end
 
     [v, w] = pp(vehiclePose);  % Pass the current vehicle pose to the path planner
-    [pub, msg] = publish_twist_command(v, w, '/ackermann_steering_controller/cmd_vel');
+    [pub, msg] = publish_twist_command(v, w, '/cmd_vel');
     send(pub, msg);
     toc;
 end
@@ -119,11 +139,42 @@ function vehiclePose = getVehiclePose(gpsSub, imuSub)
     vehiclePose = [x_utm, y_utm, euler(1)];
 end
 
+function vehiclePose = getVehiclePose_TF(tree, sourceFrame, targetFrame)
+    % This function returns the pose of the vehicle in the odom frame.
+
+    % Check if the frames are available in the tree
+    if ~any(strcmp(tree.AvailableFrames, sourceFrame))
+        error('Source frame is not available in the tree');
+    end
+    if ~any(strcmp(tree.AvailableFrames, targetFrame))
+        error('Target frame is not available in the tree');
+    end
+
+    % Wait for the transformation to be available
+    waitForTransform(tree, sourceFrame, targetFrame); 
+
+    % Get the transformation
+    tf = getTransform(tree, sourceFrame, targetFrame);
+
+    % Extract the vehicle's pose
+    trans = [tf.Transform.Translation.X;
+             tf.Transform.Translation.Y];
+
+    quat = [tf.Transform.Rotation.W;
+            tf.Transform.Rotation.X;
+            tf.Transform.Rotation.Y;
+            tf.Transform.Rotation.Z];
+
+    eul = quat2eul(quat');  % Get the euler angles in ZYX order (yaw, pitch, roll)
+
+    vehiclePose = [trans; eul(1)];  % Vehicle's pose in [x, y, theta(yaw)]
+end
+
 function broadcastTftree(vehiclePose,tftree)
     % TF 메시지 생성 및 설정
     tfStampedMsg = rosmessage('geometry_msgs/TransformStamped');
     tfStampedMsg.ChildFrameId = 'base_link';
-    tfStampedMsg.Header.FrameId = 'hunter2_base';
+    tfStampedMsg.Header.FrameId = 'hunter_world';
     tfStampedMsg.Header.Stamp = rostime('now');
     tfStampedMsg.Transform.Translation.X = vehiclePose(1);
     tfStampedMsg.Transform.Translation.Y = vehiclePose(2);
@@ -287,54 +338,37 @@ function [pub, msg] = publish_twist_command(v, w, topicName)
 end
 
 
-function [innerConePosition, outerConePosition] = Straight(vehiclePose)
+function [innerConePosition, outerConePosition] = Right()
     innerConePosition = [
-               vehiclePose(1)+1, vehiclePose(2);
-               vehiclePose(1)+1, vehiclePose(2)+1;
-               vehiclePose(1)+1, vehiclePose(2)+2;
-               vehiclePose(1)+1, vehiclePose(2)+3;
-               vehiclePose(1)+1, vehiclePose(2)+4;
-               vehiclePose(1)+1, vehiclePose(2)+5];
+               0, -1;
+               1.5, -1;
+               2.5, -2;
+               3, -3;
+               3, -4;
+               3, -5];
     outerConePosition = [
-               vehiclePose(1)-1, vehiclePose(2);
-               vehiclePose(1)-1, vehiclePose(2)+1;
-               vehiclePose(1)-1, vehiclePose(2)+2;
-               vehiclePose(1)-1, vehiclePose(2)+3;
-               vehiclePose(1)-1, vehiclePose(2)+4;
-               vehiclePose(1)-1, vehiclePose(2)+5];
+               0, 1;
+               2, 1;
+               3.5, 0;
+               4.5, -1;
+               5, -3;
+               5, -5];
 end
 
-function [innerConePosition, outerConePosition] = Left(vehiclePose)
+function [innerConePosition, outerConePosition] = Straight()
     innerConePosition = [
-               vehiclePose(1)+1, vehiclePose(2);
-               vehiclePose(1)+0.5, vehiclePose(2)+1;
-               vehiclePose(1)-0.5, vehiclePose(2)+2;
-               vehiclePose(1)-1.5, vehiclePose(2)+3;
-               vehiclePose(1)-3, vehiclePose(2)+3.5;
-               vehiclePose(1)-5, vehiclePose(2)+4];
+               1, -1;
+               2, -1;
+               3, -1;
+               4, -1;
+               5, -1;
+               6, -1];
     outerConePosition = [
-               vehiclePose(1)-1, vehiclePose(2);
-               vehiclePose(1)-1.5, vehiclePose(2)+1;
-               vehiclePose(1)-2.5, vehiclePose(2)+1.5;
-               vehiclePose(1)-4, vehiclePose(2)+2;
-               vehiclePose(1)-5, vehiclePose(2)+2;
-               vehiclePose(1)-5.5, vehiclePose(2)+2];
+               1,1;
+               2, 1;
+               3, 1;
+               4, 1;
+               5, 1;
+               6, 1];
 
-end
-
-function [innerConePosition, outerConePosition] = Right(vehiclePose)
-    innerConePosition = [
-               vehiclePose(1)+1, vehiclePose(2);
-               vehiclePose(1)+1.5, vehiclePose(2)+1;
-               vehiclePose(1)+2.5, vehiclePose(2)+1.5;
-               vehiclePose(1)+4, vehiclePose(2)+2;
-               vehiclePose(1)+5, vehiclePose(2)+2;
-               vehiclePose(1)+5.5, vehiclePose(2)+2];
-    outerConePosition = [
-               vehiclePose(1)-1, vehiclePose(2);
-               vehiclePose(1)-0.5, vehiclePose(2)+1;
-               vehiclePose(1)+0.5, vehiclePose(2)+2;
-               vehiclePose(1)+1.5, vehiclePose(2)+3;
-               vehiclePose(1)+3, vehiclePose(2)+3.5;
-               vehiclePose(1)+5, vehiclePose(2)+4];
 end
