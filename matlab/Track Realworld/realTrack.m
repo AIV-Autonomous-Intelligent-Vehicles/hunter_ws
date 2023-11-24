@@ -179,7 +179,7 @@ function vehiclePose = getVehiclePose_TF(tree, sourceFrame, targetFrame)
 
     % Extract the vehicle's pose
     trans = [tf.Transform.Translation.X;
-             tf.Transform.Translation.Y];
+            tf.Transform.Translation.Y];
 
     quat = [tf.Transform.Rotation.W;
             tf.Transform.Rotation.X;
@@ -223,8 +223,8 @@ function waypoints = generate_waypoints_del(innerConePosition, outerConePosition
 		    
     % inner and outer constraints when the interval is even
     if rem(interv,2) == 0
-     cIn = [2 1;(1:2:mc-3)' (3:2:(mc))'; (mc-1) mc];
-     cOut = [(2:2:(mc-2))' (4:2:mc)'];
+        cIn = [2 1;(1:2:mc-3)' (3:2:(mc))'; (mc-1) mc];
+        cOut = [(2:2:(mc-2))' (4:2:mc)'];
     else
     % inner and outer constraints when the interval is odd
     cIn = [2 1;(1:2:mc-2)' (3:2:(mc))'; (mc-1) mc];
