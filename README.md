@@ -38,8 +38,6 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 rosrun hunter_bringup bringup_can2usb.bash
 # Start the base node for the real robot
 roslaunch hunter_bringup hunter_robot_base.launch 
-# Rviz Display
-roslaunch hunter2_base display_xacro.launch
 ```
 
 </div>
