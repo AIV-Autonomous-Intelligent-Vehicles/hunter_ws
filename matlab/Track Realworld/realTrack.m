@@ -14,10 +14,10 @@ waypointTreshold = 3; % make a waypoint before 3m
 
 pp=controllerPurePursuit;
 pp.LookaheadDistance=1.3; % m
-pp.DesiredLinearVelocity=1.5; % m/s
-pp.MaxAngularVelocity = 2.0; % rad/s
+pp.DesiredLinearVelocity=0.1; % m/s
+pp.MaxAngularVelocity = 0.3; % rad/s
 
-LidarCam = true;
+LidarCam = false;
 GpsImu = true;
 
 
@@ -49,6 +49,8 @@ if GpsImu
     sub.Gps = rossubscriber("/ublox_gps/fix","sensor_msgs/NavSatFix","DataFormat","struct");
     % imu sub
     sub.Imu = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
+    vehiclePose_origin = getVehiclePose(sub);
+    %sub.Odom = rossubscriber("/odom","nav_msgs/Odometry","DataFormat","struct");
 end
 
 % Publish Command
@@ -69,6 +71,9 @@ while true % ctrl + c to stop
     
     if GpsImu
         vehiclePose = getVehiclePose(sub); % get pose data from gps, imu
+        vehiclePose(1) = vehiclePose(1) - vehiclePose_origin(1);
+        vehiclePose(2) = vehiclePose(2) - vehiclePose_origin(2);
+        %vehiclePose= getVehiclePose_Odom(sub);
         broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
         worldFrame = 'hunter_world';
     else
@@ -89,7 +94,7 @@ while true % ctrl + c to stop
                 [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r,cameraParams, ...
                                                                         tformCamera_l,tformCamera_r,clusterThreshold);
             else
-                [innerConePosition, outerConePosition] = Right();
+                [innerConePosition, outerConePosition] = Straight();
             end
 
             % 경로 생성
@@ -119,16 +124,31 @@ while true % ctrl + c to stop
             
         end
     end
-
     [v, w] = pp(vehiclePose);  % Pass the current vehicle pose to the path planner
     cmdMsg = publish_twist_command(v, w, pub.Cmd);
     send(pub.Cmd, cmdMsg);
+
+
     toc;
 end
 
 
 
 %%
+function vehiclePose = getVehiclePose_Odom(sub)
+    msg = receive(sub.Odom);
+
+    % 위치 정보 추출
+    x = msg.Pose.Pose.Position.X;
+    y = msg.Pose.Pose.Position.Y;
+
+    % 방향(오리엔테이션) 정보 추출 및 Yaw 각도 계산
+    quat = [msg.Pose.Pose.Orientation.W, msg.Pose.Pose.Orientation.X, ...
+            msg.Pose.Pose.Orientation.Y, msg.Pose.Pose.Orientation.Z];
+    eul = quat2eul(quat);
+    yaw = eul(1); % Yaw는 보통 오일러 각의 첫 번째 요소입니다.
+    vehiclePose = [x;y;yaw];
+end
 
 
 function vehiclePose = getVehiclePose(sub)
@@ -137,9 +157,9 @@ function vehiclePose = getVehiclePose(sub)
     quat = [imuMsg.Orientation.W,imuMsg.Orientation.X,imuMsg.Orientation.Y,imuMsg.Orientation.Z];
     euler = quat2eul(quat);
     % UTM 좌표계로 변환 (Korea: 32652)
-    [x_utm, y_utm] = projfwd(projcrs(32652), gpsMsg.latitude, gpsMsg.longitude);
+    [x_utm, y_utm] = projfwd(projcrs(32652), gpsMsg.Latitude, gpsMsg.Longitude);
 
-    vehiclePose = [x_utm, y_utm, euler(1)];
+    vehiclePose = [x_utm; y_utm; euler(1)];
 end
 
 function vehiclePose = getVehiclePose_TF(tree, sourceFrame, targetFrame)
