@@ -30,8 +30,6 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 
 ## RealWorld Environment
 
-We have utilized the **hunter2** model provided by [agilexrobotics](https://github.com/agilexrobotics/ugv_gazebo_sim) as the foundation for our simulation environment. To enhance its capabilities, we have integrated the following sensors:
-
 <details>
 <summary>Hunter2</summary>
 <div markdown="1">
