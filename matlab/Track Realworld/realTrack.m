@@ -62,8 +62,6 @@ pub.Path = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat'
 
 
 
-
-
 figure;
 
 while true % ctrl + c to stop
@@ -76,7 +74,7 @@ while true % ctrl + c to stop
         %vehiclePose= getVehiclePose_Odom(sub);
         broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
         worldFrame = 'hunter_world';
-    else
+    else % odom TF
         vehiclePose = getVehiclePose_TF(tftree, 'odom', 'base_link'); % get vehiclePose from Odom
         worldFrame = 'odom';
     end
