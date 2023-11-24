@@ -1,8 +1,11 @@
 <launch>
-    <!-- start base and load model -->
+    <!-- start base and load model for hunter_base -->
     <include file="$(find hunter_base)/launch/hunter_base.launch">
         <arg name="port_name" default="can0" />
         <arg name="simulated_robot" default="false" />
         <arg name="publish_tf" default="false" />
     </include>
+
+    <!-- Include display_xacro.launch -->
+    <include file="$(find hunter2_base)/launch/display_xacro.launch" />
 </launch>
