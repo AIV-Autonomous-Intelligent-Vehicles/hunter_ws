@@ -1,4 +1,4 @@
-# hunter2 Gazebo Simulation, RealWorld
+# hunter2_ws from AIV
 
 <p align="center">
   <img src="https://github.com/AIV-Autonomous-Intelligent-Vehicles/hunter_ws/assets/113443261/aea97be9-3727-415e-bfa2-a2239a522dba" alt="Team Image" width="500"/>
@@ -25,7 +25,8 @@ We have utilized the **hunter2** model provided by [agilexrobotics](https://gith
 - GPS
 - IMU
 - Ouster 64-channel LiDAR
-- Left, Right Camera<br>
+- Left, Right Camera
+  <br><br>
 
 ## RealWorld Environment
 
