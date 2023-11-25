@@ -17,7 +17,7 @@ pp.LookaheadDistance=1; % m
 pp.DesiredLinearVelocity=0.1; % m/s
 pp.MaxAngularVelocity = 0.3; % rad/s
 
-LidarCam = false;
+LidarCam = true;
 GpsImu = true;
 
 cnt = 0;
@@ -29,20 +29,19 @@ params = lidarParameters('OS1Gen1-64',512);
 
 if LidarCam
     % Ouster 64ch sub
-    sub.Lidar = rossubscriber('/os1_cloud_node/points',"DataFormat","struct");
+    sub.Lidar = rossubscriber('/ouster/points',"DataFormat","struct");
     % Yolo Client
-    client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects',DataFormat='struct');
+    client = rossvcclient('/Activate_yolo','cob_object_detection_msgs/DetectObjects','struct');
     request_l = rosmessage(client);
     request_l.ObjectName.Data = 'left';
     request_r = rosmessage(client);
     request_r.ObjectName.Data = 'right';
-    load("camera1.mat"); 
-    tform_l = tform;
+    load("tform_left.mat"); 
     tformCamera_l = invert(tform_l);
-    load("camera2.mat");
-    tform_r = tform;
+    load("tform_right.mat");
     tformCamera_r = invert(tform_r);
-    load("cameraParams.mat")
+    load("cameraParams_left.mat")
+    load("cameraParams_right.mat")
 end
 if GpsImu
     % Gps sub
@@ -90,8 +89,8 @@ while true % ctrl + c to stop
                 bboxData_l = call(client, request_l);
             
                 % 콘 검출
-                [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r,cameraParams, ...
-                                                                        tformCamera_l,tformCamera_r,clusterThreshold);
+                [innerConePosition, outerConePosition] = detectCone(lidarData,params,roi,bboxData_l,bboxData_r,cameraParams_l,cameraParams_r, ...
+                                                                        tformCamera_l,tformCamera_r,clusterThreshold,cuboidTreshold);
             else
                 if cnt / 2 ==1
                     [innerConePosition, outerConePosition] = Right();

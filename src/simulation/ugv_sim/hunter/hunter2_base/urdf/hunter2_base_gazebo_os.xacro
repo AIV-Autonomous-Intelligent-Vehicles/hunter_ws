@@ -718,7 +718,7 @@
 <!-- Gazebo requires the Camera1_plugins package -->
   <gazebo reference="camera_link">
     <material>Gazebo/Yellow</material>
-      <sensor type="camera" name="camera1">
+      <sensor type="camera" name="camera_Right">
         <pose> 0 0 0 0 0 0 </pose>
         <visualize>false</visualize>
         <update_rate>30.0</update_rate>
@@ -742,8 +742,8 @@
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
-          <cameraName>/camera1</cameraName>   
-          <imageTopicName>Right_image_raw</imageTopicName>
+          <cameraName>/camera_Right</cameraName>   
+          <imageTopicName>image_raw</imageTopicName>
           <cameraInfoTopicName>camera_info</cameraInfoTopicName>
           <frameName>camera_link</frameName>
           <hackBaseline>0.07</hackBaseline>
@@ -784,7 +784,7 @@
 
   <gazebo reference="camera2_link">
     <material>Gazebo/Red</material>
-    <sensor type="camera" name="camera2">
+    <sensor type="camera" name="camera_Left">
       <pose> 0 0 0 0 0 0 </pose>
       <visualize>false</visualize>
       <update_rate>30.0</update_rate>
@@ -808,8 +808,8 @@
       <plugin name="camera2_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>/camera2</cameraName>  
-        <imageTopicName>Left_image_raw</imageTopicName>
+        <cameraName>/camera_Left</cameraName>  
+        <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera2_link</frameName>
         <hackBaseline>0.07</hackBaseline>
