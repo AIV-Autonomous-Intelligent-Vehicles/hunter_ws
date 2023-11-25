@@ -9,10 +9,13 @@
   <!-- <include file="$(find hunter2_control)/launch/hunter2_contol.launch" ns="/"/> -->
 
   <include file="$(find hunter2_control)/launch/hunter2_v_contol.launch" />
-  <include file="$(find yolov5_ros)/launch/yolov5.launch" />
+  <include file="$(find yolov5_ros)/launch/yolov5.launch">
+        <arg name="weights" value="$(find yolov5_ros)/src/yolov5/largeCone.pt" />
+  </include>
   <!-- urdf xml robot description loaded on the Parameter Server, converting the xacro into a proper urdf file-->
   <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find hunter2_gazebo)/xacro/hunter2_base.xacro'" /> -->
   <param name="robot_description" command="$(find xacro)/xacro '$(find hunter2_base)/urdf/hunter2_base_gazebo_os.xacro'" />
+
   <!-- <param name="robot_description" command="cat $(find hunter2_base)/urdf/hunter2_base.urdf"/> -->
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="hunter_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model hunter2_base -z 1 -x -2 -Y 1.57"

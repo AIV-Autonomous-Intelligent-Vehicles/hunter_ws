@@ -1,4 +1,4 @@
-function [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r,cameraParams,tformCamera_l,tformCamera_r,clusterThreshold)
+function [innerConePosition, outerConePosition] = detectCone(lidarData,params,roi,bboxData_l,bboxData_r,cameraParams_l,cameraParams_r,tformCamera_l,tformCamera_r,clusterThreshold,cuboidTreshold)
     xyzData = rosReadXYZ(lidarData);
     ptCloud = pointCloud(xyzData);
 
@@ -16,8 +16,8 @@ function [innerConePosition, outerConePosition] = detectCone(lidarData,params,bb
     [y_coneBboxs_l, b_coneBboxs_l] = extractConesBboxs(bboxData_l.ObjectList);
     [y_coneBboxs_r, b_coneBboxs_r] = extractConesBboxs(bboxData_r.ObjectList);
 
-    [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams,tformCamera_l,'ClusterThreshold',clusterThreshold);
-    [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams,tformCamera_r,'ClusterThreshold',clusterThreshold);
+    [bboxesLidar_l,~,boxesUsed_l] = bboxCameraToLidar([y_coneBboxs_l; b_coneBboxs_l],roiPtCloud,cameraParams_l,tformCamera_l,'ClusterThreshold',clusterThreshold);
+    [bboxesLidar_r,~,boxesUsed_r] = bboxCameraToLidar([y_coneBboxs_r; b_coneBboxs_r],roiPtCloud,cameraParams_r,tformCamera_r,'ClusterThreshold',clusterThreshold);
     
 
     % 검출된 콘 중 y_cone, b_cone 분류
