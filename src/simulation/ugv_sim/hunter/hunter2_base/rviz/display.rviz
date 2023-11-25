@@ -8,7 +8,6 @@ Panels:
         - /Status1
         - /TF1
         - /TF1/Tree1
-        - /TF1/Tree1/odom1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -134,9 +133,9 @@ Visualization Manager:
           Value: true
         front_steer_right_link:
           Value: true
-        left_rear_link:
+        hunter_world:
           Value: true
-        odom:
+        left_rear_link:
           Value: true
         rear_wheel_link:
           Value: true
@@ -149,7 +148,7 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
+        hunter_world:
           base_link:
             front_steer_left_link:
               front_left_wheel_link:
@@ -172,7 +171,7 @@ Visualization Manager:
       Marker Topic: /clusters_marker
       Name: MarkerArray
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -180,14 +179,14 @@ Visualization Manager:
       Marker Topic: /path_marker
       Name: Marker
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: hunter_world
     Frame Rate: 30
   Name: root
   Tools:
@@ -247,5 +246,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1267
-  X: 677
-  Y: 179
+  X: 653
+  Y: 142

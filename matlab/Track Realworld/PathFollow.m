@@ -50,7 +50,9 @@ if GpsImu
     % imu sub
     sub.Imu = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
     disp("Waiting for GPS, IMU data..")
-    vehiclePose_origin = getVehiclePose_gps(sub);
+    vehiclePose_origin = getVehiclePose(sub);
+    disp("Waiting for Hunter2 data(/odom)..")
+    sub.Odom = rossubscriber("/odom","nav_msgs/Odometry","DataFormat","struct");
 end
 
 % Publish Command
@@ -60,75 +62,40 @@ pub.Cmd = rospublisher('/cmd_vel', 'geometry_msgs/Twist','DataFormat','struct');
 % Path visualization for Rviz
 pub.Path = rospublisher('/path_marker', 'visualization_msgs/Marker','DataFormat','struct');
 
-sub.Odom = rossubscriber("/odom","nav_msgs/Odometry","DataFormat","struct");
 
-
-figure;
+load('groundWaypoint.mat');
+groundWaypoint_utm = convertToUtm(groundWaypoint,vehiclePose_origin);
+pp.Waypoints = groundWaypoint_utm;
+broadcastTftree(vehiclePose_origin,tftree); % broadcasting TF tree
+[pathMarkerMsg, markerIdPath] = generate_path_marker(groundWaypoint_utm, 'hunter_world', markerIdPath,"red");
+send(pub.Path, pathMarkerMsg);
+vehiclePose_data =[];
+cnt = 0;
 
 while true % ctrl + c to stop
     tic;
+
+    cnt = cnt +1;
     
-    if GpsImu
-        vehiclePose = getVehiclePose_gps(sub); % get pose data from gps, imu
-        vehiclePose(1) = vehiclePose(1) - vehiclePose_origin(1);
-        vehiclePose(2) = vehiclePose(2) - vehiclePose_origin(2);
-        worldFrame = 'hunter_gps';
-    else % odom 
-        vehiclePose_odom = getVehiclePose_odom(sub); % get pose from odom
-        worldFrame = 'hunter_odom';
-    end
+    vehiclePose = getVehiclePose(sub); % get pose data from gps, imu
+    vehiclePose_odom = getVehiclePose_Odom(sub); % get pose from odom
+    vehiclePose(1) = vehiclePose(1) - vehiclePose_origin(1);
+    vehiclePose(2) = vehiclePose(2) - vehiclePose_origin(2);
     
-    broadcastTftree(vehiclePose,tftree,worldFrame); % broadcasting TF tree
 
-    if isempty(pp.Waypoints) || norm(worldWaypoints(end,:)-[vehiclePose(1), vehiclePose(2)]) < waypointTreshold  % Considering only x and y for the distance
-        disp("Make new waypoints");
-        
-        try
-            if LidarCam
-                lidarData = receive(sub.Lidar);
-                bboxData_r = call(client, request_r);
-                bboxData_l = call(client, request_l);
-            
-                % 콘 검출
-                [innerConePosition, outerConePosition] = detectCone(lidarData,params,bboxData_l,bboxData_r,cameraParams, ...
-                                                                        tformCamera_l,tformCamera_r,clusterThreshold);
-            else
-                if cnt / 2 ==1
-                    [innerConePosition, outerConePosition] = Right();
-                    cnt = cnt +1;
-                else
-                    [innerConePosition, outerConePosition] = Straight();
-                    cnt = cnt + 1;
-                end
-            end
 
-            % 경로 생성
-            waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
-            
-            % waypoint 차량 좌표계에서 월드 좌표계로 변환
-            worldWaypoints = transformWaypointsToWorld(waypoints, vehiclePose);
-            
+    vehiclePose = vehiclePose_odom; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for Indoor Test
+    vehiclePose_data = [vehiclePose_data;vehiclePose];
+    
+    
+    [pathMarkerMsg, ~] = generate_path_marker(vehiclePose_data, 'hunter_world', markerIdPath,"blue");
+    send(pub.Path, pathMarkerMsg);
 
-            % 검출된 콘 시각화
-            hold off;
-            scatter(innerConePosition(:,1),innerConePosition(:,2),'blue');
-            hold on;
-            scatter(outerConePosition(:,1),outerConePosition(:,2),'red');
-            
-            % 경로, 콘 시각화 Rviz
-            [markerArrayMsg, markerIdClusters] = generate_clusters_marker(innerConePosition, outerConePosition, 'base_link', markerIdClusters);
-            send(pub.Clusters, markerArrayMsg);
-            [pathMarkerMsg, markerIdPath] = generate_path_marker(worldWaypoints, worldFrame, markerIdPath);
-            send(pub.Path, pathMarkerMsg);
-     
-            pp.Waypoints = worldWaypoints;
+    
+  
+    broadcastTftree(vehiclePose,tftree); % broadcasting TF tree
 
-        catch
-            disp("Fail to make new waypoints");
-            continue; % 다음 while문 반복으로 넘어감
-            
-        end
-    end
+    
     [v, w] = pp(vehiclePose);  % Pass the current vehicle pose to the path planner
     cmdMsg = publish_twist_command(v, w, pub.Cmd);
     send(pub.Cmd, cmdMsg);
@@ -140,7 +107,22 @@ end
 
 
 %%
-function vehiclePose = getVehiclePose_odom(sub)
+
+function groundWaypoint_utm = convertToUtm(groundWaypoint,vehiclePose_origin)
+    % Define the UTM zone using its EPSG code
+    utmZone = projcrs(32652);
+
+    % Initialize the output matrix
+    groundWaypoint_utm = zeros(size(groundWaypoint));
+
+    % Convert each latitude and longitude pair to UTM
+    for i = 1:size(groundWaypoint, 1)
+        [x_utm, y_utm] = projfwd(utmZone, groundWaypoint(i,2), groundWaypoint(i,1)); % Make sure Long, Lat
+        groundWaypoint_utm(i,:) = [x_utm-vehiclePose_origin(1), y_utm-vehiclePose_origin(2)];
+    end
+end
+
+function vehiclePose = getVehiclePose_Odom(sub)
     msg = receive(sub.Odom);
 
     % 위치 정보 추출
@@ -156,7 +138,7 @@ function vehiclePose = getVehiclePose_odom(sub)
 end
 
 
-function vehiclePose = getVehiclePose_gps(sub)
+function vehiclePose = getVehiclePose(sub)
     gpsMsg = receive(sub.Gps);
     imuMsg = receive(sub.Imu);
     quat = [imuMsg.Orientation.W,imuMsg.Orientation.X,imuMsg.Orientation.Y,imuMsg.Orientation.Z];
@@ -168,7 +150,6 @@ function vehiclePose = getVehiclePose_gps(sub)
 end
 
 function vehiclePose = getVehiclePose_TF(tree, sourceFrame, targetFrame)
-    % ex) vehiclePose = getVehiclePose_TF(tftree, 'odom', 'base_link'); % get vehiclePose from Odom
     % This function returns the pose of the vehicle in the odom frame.
 
     % Check if the frames are available in the tree
@@ -199,11 +180,11 @@ function vehiclePose = getVehiclePose_TF(tree, sourceFrame, targetFrame)
     vehiclePose = [trans, eul(1)];  % Vehicle's pose in [x, y, theta(yaw)]
 end
 
-function broadcastTftree(vehiclePose,tftree,worldFrame)
+function broadcastTftree(vehiclePose,tftree)
     % TF 메시지 생성 및 설정
     tfStampedMsg = rosmessage('geometry_msgs/TransformStamped');
     tfStampedMsg.ChildFrameId = 'base_link';
-    tfStampedMsg.Header.FrameId = worldFrame;
+    tfStampedMsg.Header.FrameId = 'hunter_world';
     tfStampedMsg.Header.Stamp = rostime('now');
     tfStampedMsg.Transform.Translation.X = vehiclePose(1);
     tfStampedMsg.Transform.Translation.Y = vehiclePose(2);
@@ -335,7 +316,7 @@ function [markerArrayMsg, markerID] = generate_clusters_marker(b_coneCluster, y_
     end
 end
 
-function [markerMsg, markerID] = generate_path_marker(waypoints, frameId, markerID)
+function [markerMsg, markerID] = generate_path_marker(waypoints, frameId, markerID,color)
     markerMsg = rosmessage('visualization_msgs/Marker','DataFormat','struct');
     markerMsg.Header.FrameId = frameId;
     markerMsg.Id = int32(markerID);  % Cast 'markerID' to int32
@@ -344,11 +325,18 @@ function [markerMsg, markerID] = generate_path_marker(waypoints, frameId, marker
     markerMsg.Action = int32(0);
     markerMsg.Pose.Orientation.W = 1.0;
     markerMsg.Scale.X = 0.05;  % Specify a suitable scale
-    markerMsg.Color.R = single(1.0); % red
-    markerMsg.Color.G = single(0.0); % green
-    markerMsg.Color.B = single(0.0); % blue
-    markerMsg.Color.A = single(1.0); % alpha
-   
+    if color == "red"
+        markerMsg.Color.R = single(1.0); % red
+        markerMsg.Color.G = single(0.0); % green
+        markerMsg.Color.B = single(0.0); % blue
+        markerMsg.Color.A = single(1.0); % alpha
+    else
+        markerMsg.Color.R = single(0.0); % red
+        markerMsg.Color.G = single(0.0); % green
+        markerMsg.Color.B = single(1.0); % blue
+        markerMsg.Color.A = single(1.0); % alpha
+    end
+
 
     % Add the waypoints to the points array of the marker
     for i = 1:size(waypoints, 1)
