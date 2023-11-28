@@ -23,7 +23,7 @@ markerIdPath = 0;
 markerIdClusters = 0;
 params = lidarParameters('OS1Gen1-64',512);
 
-lidarSub = rossubscriber('/lidar/points', "DataFormat", "struct");
+lidarSub = rossubscriber('/lidar', "DataFormat", "struct");
 %detect_sub_l = rossubscriber('yolov5/cob_detections_l', 'cob_perception_msgs/DetectionArray');
 %detect_sub_r = rossubscriber('yolov5/cob_detections_r', 'cob_perception_msgs/DetectionArray');
 [pubClusters, markerArrayMsg] = rospublisher('/clusters_marker', 'visualization_msgs/MarkerArray',DataFormat='struct');
@@ -36,11 +36,11 @@ request_r = rosmessage(client);
 request_r.ObjectName.Data = 'right';
 
 load("camera1.mat");
-camera1_tform = tform;
-tformCamera1 = invert(camera1_tform);
+
+tformCamera1 = invert(tform1);
 load("camera2.mat");
-camera2_tform = tform;
-tformCamera2 = invert(camera2_tform);
+
+tformCamera2 = invert(tform2);
 load("cameraParams.mat")
 
 figure;

@@ -1,6 +1,6 @@
 <launch>
     <!-- Detection configuration -->
-    <arg name="weights" default="$(find yolov5_ros)/src/yolov5/smallCone.pt"/>
+    <arg name="weights" default="$(find yolov5_ros)/src/yolov5/largeCone.pt"/>
     <arg name="data" default="$(find yolov5_ros)/src/yolov5/data/data.yaml"/>
     <arg name="confidence_threshold" default="0.55"/>
     <arg name="iou_threshold" default="0.55"/>
@@ -18,8 +18,8 @@
     <arg name="view_image" default="true"/>
     <arg name="view_image2" default="true"/>
     <!-- ROS topics -->
-    <arg name="input_image_topic_R" default="/camera_Right/usb_cam_right/image_raw"/>
-    <arg name="input_image_topic_L" default="/camera_Left/usb_cam_left/image_raw"/>
+    <arg name="input_image_topic_R" default="/usb_cam_right/image_raw"/>
+    <arg name="input_image_topic_L" default="/usb_cam_left/image_raw"/>
     <!-- <arg name="input_image_topic_R" default="/usb_cam/image_raw"/> -->
     <!-- <arg name="input_image_topic_L" default="??"/> -->
     <arg name="output_topic_r" default="/yolov5/detections_r"/>

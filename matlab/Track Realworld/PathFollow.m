@@ -14,7 +14,7 @@ waypointTreshold = 3; % make a waypoint before 3m
 
 pp=controllerPurePursuit;
 pp.LookaheadDistance=1; % m
-pp.DesiredLinearVelocity=0.1; % m/s
+pp.DesiredLinearVelocity=0.3; % m/s
 pp.MaxAngularVelocity = 0.3; % rad/s
 
 LidarCam = false;
@@ -84,12 +84,12 @@ while true % ctrl + c to stop
     
 
 
-    vehiclePose = vehiclePose_odom; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for Indoor Test
+    %vehiclePose = vehiclePose_odom; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% for Indoor Test
     vehiclePose_data = [vehiclePose_data;vehiclePose];
     
     
-    [pathMarkerMsg, ~] = generate_path_marker(vehiclePose_data, 'hunter_world', markerIdPath,"blue");
-    send(pub.Path, pathMarkerMsg);
+    %[pathMarkerMsg, ~] = generate_path_marker(vehiclePose_data, 'hunter_world', markerIdPath,"blue");
+    %send(pub.Path, pathMarkerMsg);
 
     
   
