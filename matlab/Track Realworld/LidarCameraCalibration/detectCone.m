@@ -34,16 +34,15 @@ function [innerConePosition, outerConePosition] = detectCone(lidarData,params,ro
 
     % y, b콘 개수 맞추기 (적은 콘 기준)
     [innerConePosition, outerConePosition] = match_array_lengths(innerConePosition, outerConePosition);
-    
-    % pcshow(roiPtCloud);
-    % xlim([0 10])
-    % ylim([-5 5])
-    % hold on;
-    % showShape('cuboid',y_coneBboxesLidar_r,'Opacity',0.5,'Color','green');
-    % showShape('cuboid',b_coneBboxesLidar_r,'Opacity',0.5,'Color','red');
-    % showShape('cuboid',y_coneBboxesLidar_l,'Opacity',0.5,'Color','blue');
-    % showShape('cuboid',b_coneBboxesLidar_l,'Opacity',0.5,'Color','red');
-           
+    hold off;
+    pcshow(roiPtCloud);
+    xlim([0 10])
+    ylim([-5 5])
+    hold on;
+    showShape('cuboid',y_coneBboxesLidar_r,'Opacity',0.5,'Color','green');
+    showShape('cuboid',b_coneBboxesLidar_r,'Opacity',0.5,'Color','red');
+    showShape('cuboid',y_coneBboxesLidar_l,'Opacity',0.5,'Color','green');
+    showShape('cuboid',b_coneBboxesLidar_l,'Opacity',0.5,'Color','red');
 end
 
 

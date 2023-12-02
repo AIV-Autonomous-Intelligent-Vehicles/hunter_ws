@@ -1,21 +1,6 @@
 <launch>
- <group ns="camera_left">
+ <group ns="camera_Left">
   <node name="usb_cam_left" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/video2" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="color_format" value="yuv422p" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="io_method" value="mmap"/>
-  </node>
-  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
-    <remap from="image" to="/camera_Left/image_raw"/>
-    <param name="autosize" value="true" />
-  </node>
- </group>
-<group ns="camera_right">
-  <node name="usb_cam_right" pkg="usb_cam" type="usb_cam_node" output="screen" >
     <param name="video_device" value="/dev/video4" />
     <param name="image_width" value="640" />
     <param name="image_height" value="480" />
@@ -25,7 +10,22 @@
     <param name="io_method" value="mmap"/>
   </node>
   <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
-    <remap from="image" to="/camera_Right/image_raw"/>
+    <remap from="image" to="/camera_Left/usb_cam_left/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+ </group>
+<group ns="camera_Right">
+  <node name="usb_cam_right" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video2" />
+    <param name="image_width" value="640" />
+    <param name="image_height" value="480" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="color_format" value="yuv422p" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/camera_Right/usb_cam_right/image_raw"/>
     <param name="autosize" value="true" />
   </node>
  </group>

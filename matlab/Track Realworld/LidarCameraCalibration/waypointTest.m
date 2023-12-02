@@ -6,8 +6,8 @@ pause(3);
 
 
 roi = [0, 10, -10, 10, -2, 3];
-params = lidarParameters('OS1Gen1-64',1024);
-clusterThreshold = 1.5; % Cluster distance
+params = lidarParameters('OS1Gen1-64',512);
+clusterThreshold = 0.06; % Cluster distance
 cuboidTreshold = 0.0001; % Ignore smaller than 0.003 cuboid (cone: 0.0215) 
 
 lidarSub = rossubscriber('/ouster/points','sensor_msgs/PointCloud2',"DataFormat","struct"); 
@@ -17,14 +17,14 @@ request_l.ObjectName.Data = 'left';
 request_r = rosmessage(client);
 request_r.ObjectName.Data = 'right';
 
-load("left_tform.mat"); 
-tformCamera_l = invert(tform);
+load("tform_left.mat"); 
+tformCamera_l = invert(tform_l);
 
-load("bestCal.mat");
-tformCamera_r = invert(tform);
+load("tform_right.mat");
+tformCamera_r = invert(tform_r);
 
-load("bestCameraParams.mat");
-load("left_cameraParams.mat");
+load("cameraParams_left.mat");
+load("cameraParams_right.mat");
 
 %% 
 
@@ -38,16 +38,16 @@ while 1
     [innerConePosition, outerConePosition] = detectCone(lidarData,...
                                                         params,roi,...
                                                         bboxData_l, bboxData_r, ...
-                                                        cameraParams_left, cameraParams_r,...
+                                                        cameraParams_l, cameraParams_r,...
                                                         tformCamera_l, tformCamera_r, clusterThreshold,cuboidTreshold);
     
-    hold off;
-    scatter(innerConePosition(:,1),innerConePosition(:,2),'red');
-    hold on;
-    scatter(outerConePosition(:,1),outerConePosition(:,2),'blue');
+    %hold off;
+    %scatter(innerConePosition(:,1),innerConePosition(:,2),'red');
+    %hold on;
+    %scatter(outerConePosition(:,1),outerConePosition(:,2),'blue');
 
-    waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
-    plot(waypoints(:,1),waypoints(:,2),'r-');
+    %waypoints = generate_waypoints_del(innerConePosition, outerConePosition);
+    %plot(waypoints(:,1),waypoints(:,2),'r-');
     pause(0.01);
 end
 
