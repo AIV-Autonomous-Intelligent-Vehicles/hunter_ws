@@ -19,8 +19,8 @@ pp.LookaheadDistance=0.8; % m
 pp.DesiredLinearVelocity=0.3; % m/s
 pp.MaxAngularVelocity = 1; % rad/s
 
-LidarCam = true;
-GpsImu = true;
+LidarCam = false;
+GpsImu = false;
 
 cnt = 0;
 % init//==================================================================
@@ -51,7 +51,9 @@ if GpsImu
     % imu sub
     sub.Imu = rossubscriber("/imu/data","sensor_msgs/Imu","DataFormat","struct");
     disp("Waiting for GPS, IMU data..")
+    pause(2);
     vehiclePose_origin = getVehiclePose_gps(sub);
+    
 end
 
 % Publish Command
@@ -71,7 +73,7 @@ while true % ctrl + c to stop
     
     if GpsImu
         vehiclePose = getVehiclePose_gps(sub); % get pose data from gps, imu
-            % vehiclePose_origin: 초기 위치 [x, y, yaw]
+        % vehiclePose_origin: 초기 위치 [x, y, yaw]
         % vehiclePose: 현재 위치 [x2, y2, yaw2]
         
         % 초기 위치에서 현재 위치로의 변위 계산

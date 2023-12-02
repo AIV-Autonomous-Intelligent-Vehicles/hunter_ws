@@ -1,3 +1,6 @@
+clear; close all; clc;
+rosshutdown;
+rosinit('http://localhost:11311')
 sub = rossubscriber("/imu/data","DataFormat","struct");
 
 
